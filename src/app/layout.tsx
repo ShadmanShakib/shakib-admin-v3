@@ -11,6 +11,8 @@ export const metadata = {
   title: "Kinde Auth",
   description: "Kinde with NextJS App Router",
 };
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 export default async function RootLayout({
   children,
@@ -19,6 +21,11 @@ export default async function RootLayout({
 }) {
   const { isAuthenticated, getUser } = getKindeServerSession();
   const user = await getUser();
+  const locale = await getLocale();
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
   return (
     <html lang="en">
       <body>
@@ -60,7 +67,11 @@ export default async function RootLayout({
             </div>
           </nav>
         </header>
-        <main>{children}</main>
+        <main>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </main>
         <footer className="footer">
           <div className="container">
             <strong className="text-heading-2">KindeAuth</strong>

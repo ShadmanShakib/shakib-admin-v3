@@ -1,23 +1,13 @@
-import Link from "next/link";
+"use client";
+import Language from "@/components/common/language";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("Homepage");
   return (
     <div className="container">
-      <div className="card hero">
-        <p className="text-display-1 hero-title">
-          Let’s start authenticating <br /> with KindeAuth
-        </p>
-        <p className="text-body-1 hero-tagline">Configure your app</p>
-
-        <Link
-          href="https://kinde.com/docs/sdks/nextjs-sdk"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-light btn-big"
-        >
-          Go to docs
-        </Link>
-      </div>
+      <Language />
+      <div className="card hero">{t("title")}</div>
     </div>
   );
 }
