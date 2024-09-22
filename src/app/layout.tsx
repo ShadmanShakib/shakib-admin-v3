@@ -34,21 +34,6 @@ export default async function RootLayout({
             {children}
           </NextIntlClientProvider>
         </main>
-        <footer className="footer">
-          <div className="container">
-            <strong className="text-heading-2">Linkaraby</strong>
-            <p className="footer-tagline text-body-3">
-              Visit our{" "}
-              <Link className="link" href="https://new.linkaraby.com">
-                Linkaraby
-              </Link>
-            </p>
-
-            <small className="text-subtle">
-              © 2024 Linkaraby, Inc. All rights reserved
-            </small>
-          </div>
-        </footer>
       </body>
     </html>
   );

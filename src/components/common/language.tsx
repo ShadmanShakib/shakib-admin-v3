@@ -19,7 +19,7 @@ export default function Language({ locale = "ar" }: Props) {
   return (
     <div className="flex">
       <DropdownMenu>
-        <DropdownMenuTrigger className="uppercase">
+        <DropdownMenuTrigger className="uppercase p-2 hover:opacity-70">
           {locale}
         </DropdownMenuTrigger>
         <DropdownMenuContent>
