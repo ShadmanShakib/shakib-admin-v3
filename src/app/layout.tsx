@@ -27,11 +27,11 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
         <header>
           <nav className="nav container">
-            <h1 className="text-display-3">KindeAuth</h1>
+            <h1 className="text-display-3">Linkaraby</h1>
             <div>
               {!(await isAuthenticated()) ? (
                 <>
@@ -74,16 +74,16 @@ export default async function RootLayout({
         </main>
         <footer className="footer">
           <div className="container">
-            <strong className="text-heading-2">KindeAuth</strong>
+            <strong className="text-heading-2">Linkaraby</strong>
             <p className="footer-tagline text-body-3">
               Visit our{" "}
-              <Link className="link" href="https://kinde.com/docs">
-                help center
+              <Link className="link" href="https://new.linkaraby.com">
+                Linkaraby
               </Link>
             </p>
 
             <small className="text-subtle">
-              © 2023 KindeAuth, Inc. All rights reserved
+              © 2024 Linkaraby, Inc. All rights reserved
             </small>
           </div>
         </footer>
