@@ -6,7 +6,6 @@ export default function Home() {
   const t = useTranslations("Homepage");
   return (
     <div className="container">
-      <Language />
       <div className="card hero">{t("title")}</div>
     </div>
   );

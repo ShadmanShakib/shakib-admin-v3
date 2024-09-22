@@ -1,5 +1,9 @@
 {
   "Homepage": {
     "title": "Hello world"
+  },
+  "Sidebar": {
+    "dashbaord": "Dashboard",
+    "campaigns": "Campaigns"
   }
 }

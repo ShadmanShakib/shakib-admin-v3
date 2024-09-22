@@ -1,24 +1,19 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import LinkItem from "./linkitem";
-
-import {
-  Bell,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  ShoppingCart,
-  Users,
-} from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Bell, Home, Package } from "lucide-react";
 type Props = {
   locale: string;
 };
 
 export default function Sidebar({ locale }: Props) {
+  const t = useTranslations("Sidebar");
   return (
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -41,12 +36,12 @@ export default function Sidebar({ locale }: Props) {
           <LinkItem
             href="/dashboard"
             icon={<Home className="h-4 w-4" />}
-            title="Dashboard"
+            title={t("dashbaord")}
           />
           <LinkItem
             href="/dashboard/campaigns"
             icon={<Package className="h-4 w-4" />}
-            title="Campaigns"
+            title={t("campaigns")}
           />
         </nav>
       </div>

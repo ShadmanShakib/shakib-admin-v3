@@ -1,5 +1,9 @@
 {
   "Homepage": {
     "title": "Arabic world"
+  },
+  "Sidebar": {
+    "dashbaord": "لوحة القيادة",
+    "campaigns": "الحملات"
   }
 }
