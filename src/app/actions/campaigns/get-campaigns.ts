@@ -2,7 +2,7 @@
 import { db } from "@/lib/db";
 export default async function getCampaigns() {
   const data = await db.campaigns.findMany({
-    take: 10,
+    take: 12,
   });
   return data;
 }

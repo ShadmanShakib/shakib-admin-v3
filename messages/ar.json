@@ -2,8 +2,44 @@
   "Homepage": {
     "title": "Arabic world"
   },
+
   "Sidebar": {
     "dashbaord": "لوحة القيادة",
     "campaigns": "الحملات"
+  },
+  "Buttons": {
+    "details": "تفاصيل",
+    "edit": "تحرير",
+    "delete": "حذف",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "Campaigns": {
+    "name": "الاسم",
+    "short_description": "الوصف القصير",
+    "campaign_details": "تفاصيل الحملة",
+    "coupon": "القسيمة",
+    "weight": "الوزن",
+    "type": "النوع",
+    "status": "الحالة",
+    "action": "الإجراء",
+    "confirm_delete": "هل أنت متأكد أنك تريد حذف هذه الحملة؟",
+    "campaigns": "الحملات",
+    "add_campaign": "إضافة حملة",
+    "campaign_name": "اسم الحملة",
+    "campaign_short_description": "الوصف القصير للحملة",
+    "platform": "المنصة",
+    "advertisement_url": "رابط الإعلان",
+    "website": "الموقع الإلكتروني",
+    "countries_served": "الدول المخدومة",
+    "public_notes": "ملاحظات عامة",
+    "warning": "تحذير",
+    "coupons": "قسائم",
+    "next": "التالي",
+    "previous": "سابق",
+    "homepage_active": "الصفحة الرئيسية نشطة",
+    "public_notes_english": "ملاحظات اللغة الإنجليزية العامة",
+    "commission_details": "تفاصيل العمولة",
+    "search_campaigns": "حملات البحث"
   }
 }

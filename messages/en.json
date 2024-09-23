@@ -5,5 +5,39 @@
   "Sidebar": {
     "dashbaord": "Dashboard",
     "campaigns": "Campaigns"
+  },
+  "Buttons": {
+    "details": "Details",
+    "yes": "Yes",
+    "no": "No",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "Campaigns": {
+    "name": "Name",
+    "short_description": "Short Description",
+    "campaign_details": "Campaign Details",
+    "coupon": "Coupon",
+    "weight": "Weight",
+    "type": "Type",
+    "status": "Status",
+    "action": "Action",
+    "confirm_delete": "Are you sure you want to delete this campaign?",
+    "yes": "Yes",
+    "no": "No",
+    "campaigns": "Campaigns",
+    "add_campaign": "Add Campaign",
+    "campaign_name": "Campaign Name",
+    "campaign_short_description Description": "Campaign Short Description",
+    "platform": "Platform",
+    "advertisement_url": "Advertisement Url",
+    "website": "Website",
+    "countries_served": "Countries Served",
+    "public_notes": "Public Notes",
+    "warning": "Warning",
+    "coupons": "Coupons",
+    "next": "Next",
+    "previous": "Previous",
+    "search_campaigns": "Search Campaigns"
   }
 }
