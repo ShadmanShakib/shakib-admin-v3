@@ -44,9 +44,9 @@ export default function Sidebar({ locale }: Props) {
             title={t("campaigns")}
           />
           <LinkItem
-            href="/dashboard/product-news"
+            href="/dashboard/news"
             icon={<Package className="h-4 w-4" />}
-            title={t("product_news")}
+            title={t("news")}
           />
         </nav>
       </div>
