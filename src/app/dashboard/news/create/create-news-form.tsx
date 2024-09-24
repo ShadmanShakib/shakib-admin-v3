@@ -80,11 +80,6 @@ export default function CreateNewsForm({}: Props) {
             control={form.control}
             label={t("Product_News.end_publish_date")}
           />
-          {/* End publish Date */}
-          {/* <div className="">
-          <h6 className="mb-2">End Publish Date</h6>
-          <DateTimePicker control={form.control} name="end_publish_date" />
-          </div> */}
 
           <Button>{t("Buttons.submit")}</Button>
         </form>

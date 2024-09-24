@@ -5,7 +5,8 @@
   "Sidebar": {
     "dashbaord": "Dashboard",
     "campaigns": "Campaigns",
-    "product_news": "Product News"
+    "product_news": "Product News",
+    "news": "News"
   },
   "Buttons": {
     "details": "Details",

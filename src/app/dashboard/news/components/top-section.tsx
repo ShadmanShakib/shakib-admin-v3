@@ -9,7 +9,7 @@ export default function TopSection() {
   return (
     <section className="py-2">
       <div className="flex justify-end">
-        <Link href="/dashboard/product-news/create">
+        <Link href="/dashboard/news/create">
           <Button className="flex gap-3">
             <Plus className="h-4 w-4" />
             {t("Product_News.add_news")}

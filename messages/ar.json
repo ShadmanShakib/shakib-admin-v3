@@ -6,7 +6,8 @@
   "Sidebar": {
     "dashbaord": "لوحة القيادة",
     "campaigns": "الحملات",
-    "product_news": "أخبار المنتجات"
+    "product_news": "أخبار المنتجات",
+    "news": "أخبار"
   },
   "Buttons": {
     "details": "تفاصيل",
