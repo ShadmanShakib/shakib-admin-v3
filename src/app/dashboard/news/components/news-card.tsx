@@ -9,7 +9,7 @@ type Props = {
 
 export default function NewsCard({ data }: Props) {
   return (
-    <Link href={`/dashboard/product-news/${data.id}`}>
+    <Link href={`/dashboard/news/${data.id}`}>
       <Card className="hover:bg-gray-50 hover:shadow-xl">
         <CardHeader>
           <CardTitle>{data.title}</CardTitle>

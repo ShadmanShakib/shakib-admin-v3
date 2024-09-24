@@ -25,6 +25,29 @@ model ProductNews{
 
 }
 
+model News {
+  id                              String @id @default(auto()) @map("_id") @db.ObjectId
+  title                           String
+  content                         String
+  type                            String
+  user_email                      String
+  start_publish_date_time         DateTime
+  end_publish_date_time           DateTime
+  pinned_news                     Boolean  @default(false)
+  target                          String
+  created_at                      DateTime @default(now())
+}
+
+model Messages {
+  id                           String @id @default(auto()) @map("_id") @db.ObjectId
+  title                        String
+  body                         String
+  status                       String   
+  created_by                   String
+  created_at                   DateTime @default(now())
+
+}
+
 model hot_products {
   id  String @id @default(auto()) @map("_id") @db.ObjectId
   title              String
