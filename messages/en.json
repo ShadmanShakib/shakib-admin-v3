@@ -14,7 +14,8 @@
     "edit": "Edit",
     "delete": "Delete",
     "next": "Next",
-    "prev": "Previous"
+    "prev": "Previous",
+    "submit": "Submit"
   },
   "Campaigns": {
     "name": "Name",
@@ -76,6 +77,9 @@
     "type": "Type",
     "status": "Status",
     "product_news": "Product News",
-    "Add news": "Add news"
+    "add_news": "Add news",
+    "title": "Title",
+    "start_publish_date": "Start Publish Date",
+    "end_publish_date": "End Publish Date"
   }
 }

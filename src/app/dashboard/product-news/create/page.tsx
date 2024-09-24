@@ -1,5 +1,13 @@
 import React from "react";
 
-export default function CreateNewsPage() {
-  return <div>CreateNewsPage</div>;
+import CreateNewsForm from "./create-news-form";
+
+type Props = {};
+
+export default function AddProductNews({}: Props) {
+  return (
+    <main>
+      <CreateNewsForm />
+    </main>
+  );
 }

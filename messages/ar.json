@@ -15,7 +15,8 @@
     "yes": "نعم",
     "no": "لا",
     "next": "التالي",
-    "prev": "سابق"
+    "prev": "سابق",
+    "submit": "إرسال"
   },
   "Campaigns": {
     "name": "الاسم",
@@ -83,6 +84,9 @@
     "type": "يكتب",
     "status": "حالة ",
     "product_news": "أخبار المنتجات",
-    "add_news": "أخبار"
+    "add_news": "أخبار",
+    "title": "عنوان",
+    "start_publish_date": "تاريخ بدء النشر",
+    "end_publish_date": "نهاية تاريخ النشر"
   }
 }
