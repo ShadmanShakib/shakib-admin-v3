@@ -12,3 +12,66 @@ datasource db {
    provider = "mongodb"
    url      = env("MONGODB_URI")
 }
+
+model ProductNews{
+    id                   String @id @default(auto()) @map("_id") @db.ObjectId
+    title                String
+    body                 String
+    product_url          String
+    start_publish_date   DateTime
+    end_publish_date     DateTime
+    created_at           DateTime   @default(now())
+    updated_at           DateTime   @updatedAt
+
+}
+
+model hot_products {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  title              String
+  url                String
+  image              String
+  coupon             Float
+  campaignid         String?
+ 
+}
+
+model campaigns {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  name                       String
+  en_name                    String?
+  short_description          String?
+  url                        String?
+  en_short_description       String?
+  logourl                    String?
+  commissionsdetails         String
+  accountid                  Json?
+  status                     String
+  type                       String
+  dateinserted               String
+  weight                     Int?
+  platform                   String?
+  coupons_only               Json?
+  countries_served           String []
+  advertisement_url          String?
+  public_notes               String?
+  en_public_notes            String?
+  homepage_active            Int?
+  created_at                 String  
+  updated_at                 String
+  warnings                  Warning []
+  coupons                   Coupon []
+  
+}
+
+type Warning {
+  en       String
+  ar       String
+}
+
+type Coupon {
+  code     String
+  type     String
+  value    String?
+  note     String?
+  en_note  String?
+}
