@@ -12,7 +12,9 @@
     "edit": "تحرير",
     "delete": "حذف",
     "yes": "نعم",
-    "no": "لا"
+    "no": "لا",
+    "next": "التالي",
+    "prev": "سابق"
   },
   "Campaigns": {
     "name": "الاسم",
@@ -35,8 +37,6 @@
     "public_notes": "ملاحظات عامة",
     "warning": "تحذير",
     "coupons": "قسائم",
-    "next": "التالي",
-    "previous": "سابق",
     "homepage_active": "الصفحة الرئيسية نشطة",
     "public_notes_english": "ملاحظات اللغة الإنجليزية العامة",
     "commission_details": "تفاصيل العمولة",

@@ -10,6 +10,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.linkaraby.com",
       },
+      {
+        protocol: "https",
+        hostname: "ae01.alicdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "p-pc.ppwebstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.salla.sa",
+      },
     ],
   },
 };

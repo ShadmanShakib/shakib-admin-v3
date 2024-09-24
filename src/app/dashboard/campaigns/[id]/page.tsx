@@ -10,7 +10,7 @@ export default async function CampaignDetailsPage({
   const campaign = await getCampaignDetails(params.id);
   const locale = await getLocale();
   return (
-    <div>
+    <div className="container">
       {campaign && <CampaignDetails locale={locale} campaign={campaign} />}
     </div>
   );

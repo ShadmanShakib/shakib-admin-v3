@@ -9,9 +9,10 @@ import Image from "next/image";
 
 type Props = {
   campaign: campaigns;
+  isEng: boolean;
 };
 
-export default function CampaignCard({ campaign }: Props) {
+export default function CampaignCard({ campaign, isEng }: Props) {
   const t = useTranslations();
   return (
     <div>
@@ -24,7 +25,12 @@ export default function CampaignCard({ campaign }: Props) {
             alt={campaign.name}
             className="h-20 w-20"
           />
-          <h1> {campaign.name}</h1>
+          <h1 className="font-semibold py-2Gg">
+            {isEng ? campaign.en_name : campaign.name}
+          </h1>
+          <p className="truncate">
+            {isEng ? campaign.en_short_description : campaign.short_description}
+          </p>
           <div className="py-3">
             <Link href={`/dashboard/campaigns/${campaign.id}`}>
               <Button variant="ghost">{t("Buttons.details")}</Button>
