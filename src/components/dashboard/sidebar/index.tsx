@@ -43,6 +43,11 @@ export default function Sidebar({ locale }: Props) {
             icon={<Package className="h-4 w-4" />}
             title={t("campaigns")}
           />
+          <LinkItem
+            href="/dashboard/product-news"
+            icon={<Package className="h-4 w-4" />}
+            title={t("product_news")}
+          />
         </nav>
       </div>
     </div>
