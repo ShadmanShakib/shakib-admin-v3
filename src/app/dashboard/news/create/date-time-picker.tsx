@@ -126,7 +126,7 @@ export function DatetimePicker({ control, name, label }: Props) {
                 </Select>
               </PopoverContent>
             </Popover>
-            <FormDescription>Set your date and time.</FormDescription>
+
             <FormMessage />
           </FormItem>
         )}

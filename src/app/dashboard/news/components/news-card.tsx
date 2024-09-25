@@ -1,10 +1,10 @@
-import { ProductNews } from "@prisma/client";
+import { News } from "@prisma/client";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 type Props = {
-  data: ProductNews;
+  data: News;
 };
 
 export default function NewsCard({ data }: Props) {
@@ -15,7 +15,7 @@ export default function NewsCard({ data }: Props) {
           <CardTitle>{data.title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="truncate">{data.body}</p>
+          <p className="truncate">{data.content}</p>
         </CardContent>
       </Card>
     </Link>

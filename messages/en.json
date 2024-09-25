@@ -92,6 +92,7 @@
     "product_description": "Product Description",
     "product_category": "Product Category",
     "add_product": "Add Product",
+    "campaign_news": "Campaign News",
     "product_added": "Product Added",
     "product_updated": "Product dpdated",
     "product_deleted": "Product deleted",
@@ -118,11 +119,19 @@
     "logo": "Logo",
     "commission_details": "Commission Details",
     "type": "Type",
+    "type_placeholder": "Select Type",
     "status": "Status",
     "product_news": "Product News",
     "add_news": "Add news",
     "title": "Title",
     "start_publish_date": "Start Publish Date",
-    "end_publish_date": "End Publish Date"
+    "end_publish_date": "End Publish Date",
+    "content": "Content",
+    "pinned": "Pinned",
+    "target": "Target",
+    "target_placeholder": "Select target audience",
+    "affiliates": "Affiliates",
+    "merchants": "Merchants",
+    "both": "Both"
   }
 }

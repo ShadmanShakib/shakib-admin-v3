@@ -12,8 +12,9 @@ import { getLocale, getMessages } from "next-intl/server";
 
 //configuring Readex_Pro font
 const readex_pro = Readex_Pro({
-  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-readex-pro",
 });
 
 export default async function RootLayout({
@@ -29,7 +30,7 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   return (
-    <html lang={locale}>
+    <html lang={locale} className={readex_pro.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

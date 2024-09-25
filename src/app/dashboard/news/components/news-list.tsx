@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { ProductNews } from "@prisma/client";
+import { News } from "@prisma/client";
 import { map } from "underscore";
 import NewsCard from "./news-card";
 
 type Props = {
-  news: ProductNews[];
+  news: News[];
 };
 
 export default function NewsList({ news }: Props) {
