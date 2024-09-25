@@ -132,6 +132,7 @@
     "target_placeholder": "Select target audience",
     "affiliates": "Affiliates",
     "merchants": "Merchants",
-    "both": "Both"
+    "both": "Both",
+    "created_successfully": "Created Successfully"
   }
 }

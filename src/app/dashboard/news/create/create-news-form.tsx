@@ -24,13 +24,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
 type Props = {};
 
 export default function CreateNewsForm({}: Props) {
   const t = useTranslations();
-  const form = useForm();
+  const form = useForm({
+    defaultValues: {
+      title: "",
+      content: "",
+      type: "",
+      target: "",
+      pinned_news: false,
+    },
+  });
   const onSubmit = async (data: any) => {
-    await createNews(data);
+    const news = await createNews(data);
+    if (news) {
+      form.reset();
+      toast.success(t("News.created_successfully"), {
+        position: "top-center",
+      });
+    }
   };
   return (
     <div className="max-w-screen-md mx-auto">

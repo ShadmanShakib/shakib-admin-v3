@@ -142,6 +142,7 @@
     "target_placeholder": "حدد الجمهور المستهدف",
     "affiliates": "الشركات التابعة",
     "merchants": "التجار",
-    "both": "كلاهما"
+    "both": "كلاهما",
+    "created_successfully": "تم إنشاؤه بنجاح"
   }
 }

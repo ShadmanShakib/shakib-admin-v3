@@ -9,6 +9,7 @@ export const metadata = {
 };
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
 
 //configuring Readex_Pro font
 const readex_pro = Readex_Pro({
@@ -45,11 +46,10 @@ export default async function RootLayout({
       </head>
 
       <body dir={locale === "ar" ? "rtl" : "lrt"}>
-        <main>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </main>
+        <NextIntlClientProvider messages={messages}>
+          <main>{children}</main>
+        </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );
