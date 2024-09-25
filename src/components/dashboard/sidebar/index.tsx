@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import LinkItem from "./linkitem";
 import { useTranslations } from "next-intl";
-import { Bell, Home, Package } from "lucide-react";
+import { Bell, Home, MessageCircle, Package } from "lucide-react";
 type Props = {
   locale: string;
 };
@@ -47,6 +47,11 @@ export default function Sidebar({ locale }: Props) {
             href="/dashboard/news"
             icon={<Package className="h-4 w-4" />}
             title={t("news")}
+          />
+          <LinkItem
+            href="/messages"
+            icon={<MessageCircle className="h-4 w-4" />}
+            title={t("messages")}
           />
         </nav>
       </div>
