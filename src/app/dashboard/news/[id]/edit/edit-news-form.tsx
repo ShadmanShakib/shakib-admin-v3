@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import createNews from "../actions/create-news";
+
 import {
   Form,
   FormControl,
@@ -16,7 +16,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
-import { DatetimePicker } from "./date-time-picker";
+import { DatetimePicker } from "@/components/common/date-time-picker";
+import updateNews from "../../actions/update-news";
 import {
   Select,
   SelectContent,
@@ -25,24 +26,28 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-type Props = {};
+import { News } from "@prisma/client";
+type Props = {
+  data: News | null;
+};
 
-export default function CreateNewsForm({}: Props) {
+export default function EditNewsForm({ data }: Props) {
   const t = useTranslations();
   const form = useForm({
     defaultValues: {
-      title: "",
-      content: "",
-      type: "",
-      target: "",
-      pinned_news: false,
+      title: data?.title,
+      content: data?.content,
+      type: data?.type,
+      target: data?.target,
+      pinned_news: data?.pinned_news,
+      start_publish_date_time: data?.start_publish_date_time,
+      end_publish_date_time: data?.end_publish_date_time,
     },
   });
-  const onSubmit = async (data: any) => {
-    const news = await createNews(data);
-    if (news) {
-      form.reset();
-      toast.success(t("News.created_successfully"), {
+  const onSubmit = async (formData: any) => {
+    const response = await updateNews(data?.id as string, formData);
+    if (response) {
+      toast.success(t("News.updated_successfully"), {
         position: "top-center",
       });
     }
@@ -172,7 +177,7 @@ export default function CreateNewsForm({}: Props) {
             label={t("Product_News.end_publish_date")}
           />
 
-          <Button>{t("Buttons.submit")}</Button>
+          <Button>{t("Buttons.update")}</Button>
         </form>
       </Form>
     </div>

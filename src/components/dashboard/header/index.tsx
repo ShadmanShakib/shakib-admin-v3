@@ -1,5 +1,6 @@
 import React from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import {
   Menu,
   Package2,
@@ -31,6 +32,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Language from "@/components/common/language";
+import UserButton from "@/components/common/user-button";
 
 type Props = {
   locale: string;
@@ -127,22 +129,7 @@ export default function Header({ locale }: Props) {
       {/* Language switcher */}
       <Language locale={locale} />
       {/* User menu */}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary" size="icon" className="rounded-full">
-            <CircleUser className="h-5 w-5" />
-            <span className="sr-only">Toggle user menu</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Logout</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <UserButton />
     </header>
   );
 }

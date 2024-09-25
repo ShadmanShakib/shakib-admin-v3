@@ -9,11 +9,13 @@ export const metadata = {
 };
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
 
 //configuring Readex_Pro font
 const readex_pro = Readex_Pro({
-  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-readex-pro",
 });
 
 export default async function RootLayout({
@@ -29,7 +31,7 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   return (
-    <html lang={locale}>
+    <html lang={locale} className={readex_pro.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -44,11 +46,10 @@ export default async function RootLayout({
       </head>
 
       <body dir={locale === "ar" ? "rtl" : "lrt"}>
-        <main>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </main>
+        <NextIntlClientProvider messages={messages}>
+          <main>{children}</main>
+        </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );

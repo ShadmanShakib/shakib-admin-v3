@@ -17,7 +17,8 @@
     "no": "لا",
     "next": "التالي",
     "prev": "سابق",
-    "submit": "إرسال"
+    "submit": "إرسال",
+    "update": "تحديث"
   },
   "Campaigns": {
     "name": "الاسم",
@@ -128,11 +129,23 @@
     "logo": "الشعار",
     "commission_details": "تفاصيل العمولة",
     "type": "يكتب",
+    "type_placeholder": "اختر النوع",
     "status": "حالة ",
     "product_news": "أخبار المنتجات",
+    "campaign_news": "أخبار الحملة",
     "add_news": "أخبار",
     "title": "عنوان",
     "start_publish_date": "تاريخ بدء النشر",
-    "end_publish_date": "نهاية تاريخ النشر"
+    "end_publish_date": "نهاية تاريخ النشر",
+    "content": "محتوى",
+    "pinned": "مثبت",
+    "target": "هدف",
+    "target_placeholder": "حدد الجمهور المستهدف",
+    "affiliates": "الشركات التابعة",
+    "merchants": "التجار",
+    "both": "كلاهما",
+    "created_successfully": "تم إنشاؤه بنجاح",
+    "email": "بريد إلكتروني",
+    "published": "نشرت"
   }
 }
