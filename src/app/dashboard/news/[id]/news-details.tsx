@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Edit, Trash } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   data: News | null;
@@ -24,18 +25,47 @@ export default function NewsDetails({ data }: Props) {
         </div>
         <hr className="my-4" />
         <div className="flex gap-3">
-          <h1 className="">User Email:</h1>
+          <h1 className="">{t("News.email")}:</h1>
           <p>{data?.user_email}</p>
         </div>
         <div className="flex gap-3">
-          <h1>Published:</h1>
+          <h1>{t("News.type")}:</h1>
+          <p className="capitalize">{data?.type} news</p>
+        </div>
+        <div className="flex gap-3">
+          <h1>{t("News.target")}:</h1>
+          <p className="capitalize">{data?.target} </p>
+        </div>
+        <div className="flex gap-3">
+          <h1>{t("News.start_publish_date")}:</h1>
+          <p className="capitalize">
+            {format(
+              data?.start_publish_date_time ?? new Date(),
+              "MMMM do, yyyy hh:mm a"
+            )}
+          </p>
+        </div>
+        <div className="flex gap-3">
+          <h1>{t("News.end_publish_date")}:</h1>
+          <p className="capitalize">
+            {format(
+              data?.end_publish_date_time ?? new Date(),
+              "MMMM do, yyyy hh:mm a"
+            )}
+          </p>
+        </div>
+
+        <div className="flex gap-3">
+          <h1>{t("News.published")}:</h1>
           <p>{format(data?.created_at ?? new Date(), "MMMM do, yyyy")}</p>
         </div>
         <div className="mt-4 flex gap-4">
-          <Button className="flex gap-2" variant="secondary">
-            <Edit className="h-4 w-4" />
-            {t("Buttons.edit")}
-          </Button>
+          <Link href={`/dashboard/news/${data?.id}/edit`}>
+            <Button className="flex gap-2" variant="secondary">
+              <Edit className="h-4 w-4" />
+              {t("Buttons.edit")}
+            </Button>
+          </Link>
           <Button className="flex gap-2" variant="destructive">
             <Trash className="h-4 w-4" />
             {t("Buttons.delete")}

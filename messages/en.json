@@ -16,7 +16,8 @@
     "delete": "Delete",
     "next": "Next",
     "prev": "Previous",
-    "submit": "Submit"
+    "submit": "Submit",
+    "update": "Update"
   },
   "Campaigns": {
     "name": "Name",
@@ -133,6 +134,8 @@
     "affiliates": "Affiliates",
     "merchants": "Merchants",
     "both": "Both",
-    "created_successfully": "Created Successfully"
+    "created_successfully": "Created Successfully",
+    "email": "Email",
+    "published": "Published"
   }
 }

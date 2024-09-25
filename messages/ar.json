@@ -17,7 +17,8 @@
     "no": "لا",
     "next": "التالي",
     "prev": "سابق",
-    "submit": "إرسال"
+    "submit": "إرسال",
+    "update": "تحديث"
   },
   "Campaigns": {
     "name": "الاسم",
@@ -143,6 +144,8 @@
     "affiliates": "الشركات التابعة",
     "merchants": "التجار",
     "both": "كلاهما",
-    "created_successfully": "تم إنشاؤه بنجاح"
+    "created_successfully": "تم إنشاؤه بنجاح",
+    "email": "بريد إلكتروني",
+    "published": "نشرت"
   }
 }
