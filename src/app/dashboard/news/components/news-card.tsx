@@ -18,7 +18,7 @@ export default function NewsCard({ data }: Props) {
         <CardHeader className="relative">
           <CardTitle>{data.title}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="relative">
           <div className="">
             <p className="truncate">{data.content}</p>
             <div className="flex mt-2 gap-3">
@@ -33,7 +33,7 @@ export default function NewsCard({ data }: Props) {
                 {t(`News.${data.type}_news`)}
               </Badge>
             </div>
-            <div className="absolute bottom-2 right-2 text-sm text-gray-500">
+            <div className=" mt-2 bottom-2 right-2 text-sm text-gray-500">
               {data.created_at.toLocaleDateString("id-ID", {
                 day: "numeric",
                 month: "long",
