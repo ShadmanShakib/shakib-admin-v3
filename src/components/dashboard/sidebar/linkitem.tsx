@@ -30,21 +30,19 @@ export default function LinkItem({
     <Collapsible.Root>
       <Collapsible.Trigger
         className={cn(
-          "rounded-lg px-2 flex items-center justify-between w-full",
+          `flex items-center justify-between rounded-lg px-3 py-2 text-muted-foreground w-full transition-all hover:text-primary`,
+          className,
           {
             "bg-primary/10 text-primary bg-black text-white hover:text-gray-300":
               isPath,
           }
         )}
       >
-        <div
-          className={cn(
-            `flex items-center gap-3 rounded-lg px-3 py-2  transition-all hover:text-muted-foreground`
-          )}
-        >
+        <div className="flex gap-3">
           {icon}
           <span>{title}</span>
         </div>
+
         <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
       </Collapsible.Trigger>
 

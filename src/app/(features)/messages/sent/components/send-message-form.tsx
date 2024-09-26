@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { TSendMessageInput, SendMessageSchema } from "@/app/types/messages";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -14,7 +16,14 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 export default function SendMessageForm({}: Props) {
-  const form = useForm();
+  const form = useForm<TSendMessageInput>({
+    resolver: zodResolver(SendMessageSchema),
+    defaultValues: {
+      title: "",
+      message: "",
+      to: "",
+    },
+  });
   const onSubmit = async (data: any) => {
     console.log(data);
   };
