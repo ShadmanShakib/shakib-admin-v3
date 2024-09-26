@@ -23,52 +23,10 @@ interface MessagesProps {
   isCollapsed: boolean;
 }
 
-export default function Messages({ isCollapsed = false }: MessagesProps) {
+export default function Messages({ isCollapsed = true }: MessagesProps) {
   return (
     <TooltipProvider delayDuration={0}>
-      <div className="">
-        <Nav
-          isCollapsed={isCollapsed}
-          links={[
-            {
-              title: "Inbox",
-              label: "128",
-              icon: Inbox,
-              variant: "default",
-            },
-            {
-              title: "Drafts",
-              label: "9",
-              icon: File,
-              variant: "ghost",
-            },
-            {
-              title: "Sent",
-              label: "",
-              icon: Send,
-              variant: "ghost",
-            },
-            {
-              title: "Junk",
-              label: "23",
-              icon: ArchiveX,
-              variant: "ghost",
-            },
-            {
-              title: "Trash",
-              label: "",
-              icon: Trash2,
-              variant: "ghost",
-            },
-            {
-              title: "Archive",
-              label: "",
-              icon: Archive,
-              variant: "ghost",
-            },
-          ]}
-        />
-      </div>
+      <div className=""></div>
     </TooltipProvider>
   );
 }

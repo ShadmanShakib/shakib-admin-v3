@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -17,11 +18,12 @@ interface NavProps {
     title: string;
     label?: string;
     icon: LucideIcon;
-    variant: "default" | "ghost";
+    href: string;
   }[];
 }
 
 export function Nav({ links, isCollapsed }: NavProps) {
+  const pathname = usePathname();
   return (
     <div
       data-collapsed={isCollapsed}
@@ -33,11 +35,14 @@ export function Nav({ links, isCollapsed }: NavProps) {
             <Tooltip key={index} delayDuration={0}>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href={link.href}
                   className={cn(
-                    buttonVariants({ variant: link.variant, size: "icon" }),
+                    buttonVariants({
+                      variant: link.href === pathname ? "default" : "ghost",
+                      size: "icon",
+                    }),
                     "h-9 w-9",
-                    link.variant === "default" &&
+                    pathname === link.href &&
                       "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
                   )}
                 >
@@ -57,10 +62,13 @@ export function Nav({ links, isCollapsed }: NavProps) {
           ) : (
             <Link
               key={index}
-              href="#"
+              href={link.href}
               className={cn(
-                buttonVariants({ variant: link.variant, size: "sm" }),
-                link.variant === "default" &&
+                buttonVariants({
+                  size: "sm",
+                  variant: pathname === link.href ? "default" : "ghost",
+                }),
+                link.href === pathname &&
                   "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
                 "justify-start"
               )}
@@ -71,8 +79,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                 <span
                   className={cn(
                     "ml-auto",
-                    link.variant === "default" &&
-                      "text-background dark:text-white"
+                    link.href === pathname && "text-background dark:text-white"
                   )}
                 >
                   {link.label}
