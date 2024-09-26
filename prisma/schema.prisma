@@ -41,8 +41,9 @@ model News {
 model Messages {
   id                           String @id @default(auto()) @map("_id") @db.ObjectId
   title                        String
-  body                         String
-  status                       String   
+  message                         String
+  seen                         Boolean @default(false)
+  to                           String  
   created_by                   String
   created_at                   DateTime @default(now())
 

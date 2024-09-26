@@ -7,13 +7,16 @@ import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Edit, Trash } from "lucide-react";
 import Link from "next/link";
+import { ar, enUS } from "date-fns/locale";
 
 type Props = {
   data: News | null;
+  locale: string;
 };
 
-export default function NewsDetails({ data }: Props) {
+export default function NewsDetails({ data, locale }: Props) {
   const t = useTranslations();
+  const localeDate = locale === "ar" ? ar : enUS;
   return (
     <div className="max-w-screen-md mx-auto py-3">
       <div className="">
@@ -30,18 +33,19 @@ export default function NewsDetails({ data }: Props) {
         </div>
         <div className="flex gap-3">
           <h1>{t("News.type")}:</h1>
-          <p className="capitalize">{data?.type} news</p>
+          <p className="capitalize">{t(`News.${data?.type}_news`)}</p>
         </div>
         <div className="flex gap-3">
           <h1>{t("News.target")}:</h1>
-          <p className="capitalize">{data?.target} </p>
+          <p className="capitalize">{t(`News.${data?.target}`)} </p>
         </div>
         <div className="flex gap-3">
           <h1>{t("News.start_publish_date")}:</h1>
           <p className="capitalize">
             {format(
               data?.start_publish_date_time ?? new Date(),
-              "MMMM do, yyyy hh:mm a"
+              "MMMM do, yyyy hh:mm a",
+              { locale: localeDate }
             )}
           </p>
         </div>
@@ -50,7 +54,10 @@ export default function NewsDetails({ data }: Props) {
           <p className="capitalize">
             {format(
               data?.end_publish_date_time ?? new Date(),
-              "MMMM do, yyyy hh:mm a"
+              "MMMM do, yyyy hh:mm a",
+              {
+                locale: localeDate,
+              }
             )}
           </p>
         </div>

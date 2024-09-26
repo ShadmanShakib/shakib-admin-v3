@@ -6,7 +6,8 @@
     "dashbaord": "Dashboard",
     "campaigns": "Campaigns",
     "product_news": "Product News",
-    "news": "News"
+    "news": "News",
+    "messages": "Messages"
   },
   "Buttons": {
     "details": "Details",
@@ -17,7 +18,8 @@
     "next": "Next",
     "prev": "Previous",
     "submit": "Submit",
-    "update": "Update"
+    "update": "Update",
+    "send": "Send"
   },
   "Campaigns": {
     "name": "Name",
@@ -137,5 +139,11 @@
     "created_successfully": "Created Successfully",
     "email": "Email",
     "published": "Published"
+  },
+  "Messages": {
+    "messages": "Messages",
+    "title": "Title",
+    "message": "Message",
+    "to": "To"
   }
 }
