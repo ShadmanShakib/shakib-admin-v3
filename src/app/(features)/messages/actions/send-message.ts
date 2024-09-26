@@ -22,4 +22,5 @@ export default async function sendMessage(payload: TSendMessageInput) {
       created_by: user?.email as string,
     },
   });
+  return message;
 }

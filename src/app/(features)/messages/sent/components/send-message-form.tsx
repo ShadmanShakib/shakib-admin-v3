@@ -3,6 +3,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { TSendMessageInput, SendMessageSchema } from "@/app/types/messages";
 import { zodResolver } from "@hookform/resolvers/zod";
+import sendMessage from "@/app/(features)/messages/actions/send-message";
+import { toast } from "sonner";
 import {
   Form,
   FormControl,
@@ -24,8 +26,13 @@ export default function SendMessageForm({}: Props) {
       to: "",
     },
   });
-  const onSubmit = async (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: TSendMessageInput) => {
+    const response = await sendMessage(data);
+    if (response) {
+      toast.success("Message sent successfully");
+      form.reset();
+    }
+    console.log(response);
   };
   return (
     <Form {...form}>
