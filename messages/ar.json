@@ -19,7 +19,8 @@
     "next": "التالي",
     "prev": "سابق",
     "submit": "إرسال",
-    "update": "تحديث"
+    "update": "تحديث",
+    "send": "يرسل"
   },
   "Campaigns": {
     "name": "الاسم",
@@ -150,6 +151,9 @@
     "published": "نشرت"
   },
   "Messages": {
-    "messages": "رسائل"
+    "messages": "رسائل",
+    "title": "عنوان",
+    "message": "رسالة",
+    "to": "المستلم"
   }
 }

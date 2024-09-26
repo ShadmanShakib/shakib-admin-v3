@@ -5,6 +5,7 @@ import { TSendMessageInput, SendMessageSchema } from "@/app/types/messages";
 import { zodResolver } from "@hookform/resolvers/zod";
 import sendMessage from "@/app/(features)/messages/actions/send-message";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 import {
   Form,
   FormControl,
@@ -18,6 +19,7 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 export default function SendMessageForm({}: Props) {
+  const t = useTranslations();
   const form = useForm<TSendMessageInput>({
     resolver: zodResolver(SendMessageSchema),
     defaultValues: {
@@ -36,13 +38,16 @@ export default function SendMessageForm({}: Props) {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="px-5">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="max-w-screen-md mx-auto"
+      >
         <FormField
           control={form.control}
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>{t("Messages.title")}</FormLabel>
               <FormControl>
                 <input
                   {...field}
@@ -58,7 +63,7 @@ export default function SendMessageForm({}: Props) {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{t("Messages.message")}</FormLabel>
               <FormControl>
                 <textarea
                   {...field}
@@ -75,7 +80,7 @@ export default function SendMessageForm({}: Props) {
           name="to"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>To</FormLabel>
+              <FormLabel>{t("Messages.to")}</FormLabel>
               <FormControl>
                 <input
                   {...field}
@@ -91,7 +96,7 @@ export default function SendMessageForm({}: Props) {
             type="submit"
             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Send
+            {t("Buttons.send")}
           </Button>
         </div>
       </form>

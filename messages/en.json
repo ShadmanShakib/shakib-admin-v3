@@ -18,7 +18,8 @@
     "next": "Next",
     "prev": "Previous",
     "submit": "Submit",
-    "update": "Update"
+    "update": "Update",
+    "send": "Send"
   },
   "Campaigns": {
     "name": "Name",
@@ -140,6 +141,9 @@
     "published": "Published"
   },
   "Messages": {
-    "messages": "Messages"
+    "messages": "Messages",
+    "title": "Title",
+    "message": "Message",
+    "to": "To"
   }
 }

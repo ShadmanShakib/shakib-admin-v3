@@ -81,7 +81,7 @@ export default function Sidebar({ locale }: Props) {
                   title: "Inbox",
                   label: "128",
                   icon: Inbox,
-                  href: "#",
+                  href: "/messages/inbox",
                 },
                 {
                   title: "Drafts",
