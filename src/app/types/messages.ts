@@ -7,3 +7,10 @@ export const SendMessageSchema = z.object({
 });
 
 export type TSendMessageInput = z.infer<typeof SendMessageSchema>;
+
+export const ReplySchema = z.object({
+  message: z.string().min(1).max(500),
+  messageId: z.string().min(1).max(500),
+});
+
+export type TReplyInput = z.infer<typeof ReplySchema>;

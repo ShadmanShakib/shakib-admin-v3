@@ -6,4 +6,5 @@ export default function middleware(req: Request) {
 
 export const config = {
   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  // matcher: ["/"],
 };

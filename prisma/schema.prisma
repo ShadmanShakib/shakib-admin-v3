@@ -41,13 +41,27 @@ model News {
 model Messages {
   id                           String @id @default(auto()) @map("_id") @db.ObjectId
   title                        String
-  message                         String
+  message                      String
   seen                         Boolean @default(false)
   to                           String  
+  replies                      Replies []
   created_by                   String
   created_at                   DateTime @default(now())
 
 }
+
+model Replies {
+      id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+      messages                Messages  @relation(fields: [messageId], references: [id])
+      messageId               String @db.ObjectId
+      message                 String
+      seen                    Boolean  @default(false)
+      created_by              String
+      created_at              DateTime @default(now())
+      updated_at              DateTime @updatedAt
+}
+
+
 
 model hot_products {
   id  String @id @default(auto()) @map("_id") @db.ObjectId
