@@ -144,6 +144,8 @@
     "messages": "Messages",
     "title": "Title",
     "message": "Message",
-    "to": "To"
+    "to": "To",
+    "sent": "Sent",
+    "inbox": "Inbox"
   }
 }

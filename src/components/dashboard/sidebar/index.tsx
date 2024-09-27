@@ -72,23 +72,23 @@ export default function Sidebar({ locale }: Props) {
               isCollapsed={false}
               links={[
                 {
-                  title: "Sent",
+                  title: "sent",
                   label: "",
                   icon: Send,
                   href: "/messages/sent",
                 },
                 {
-                  title: "Inbox",
-                  label: "128",
+                  title: "inbox",
+                  label: "",
                   icon: Inbox,
                   href: "/messages/inbox",
                 },
-                {
-                  title: "Drafts",
-                  label: "9",
-                  icon: File,
-                  href: "#",
-                },
+                // {
+                //   title: "drafts",
+                //   label: "9",
+                //   icon: File,
+                //   href: "#",
+                // },
 
                 // {
                 //   title: "Junk",

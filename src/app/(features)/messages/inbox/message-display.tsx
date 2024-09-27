@@ -1,6 +1,7 @@
 "use client";
 
 import { format } from "date-fns/format";
+import { formatDistanceToNow } from "date-fns";
 import { useTranslations } from "next-intl";
 import {
   Archive,
@@ -148,17 +149,26 @@ export function MessageDisplay({ message }: MessageDisplayProps) {
             </div>
             <Separator />
             <div className="flex-1 whitespace-pre-wrap p-4 text-sm">
-              {message.message}
-            </div>
-            {/* Replies */}
-            <div>
-              {map(message.replies, (rep) => {
-                return (
-                  <div className="" key={rep.id}>
-                    <p>{rep.message}</p>
-                  </div>
-                );
-              })}
+              <div className="">
+                <p> {message.message}</p>
+              </div>
+              <Separator className="my-4" />
+
+              {/* Replies */}
+              <div>
+                {map(message.replies, (rep) => {
+                  return (
+                    <div className="" key={rep.id}>
+                      <p>{rep.message}</p>
+                      <h1 className="text-xs">
+                        {formatDistanceToNow(new Date(rep.created_at))} ago
+                      </h1>
+
+                      <Separator className="my-2" />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <Separator className="mt-auto" />
             <div className="p-4">

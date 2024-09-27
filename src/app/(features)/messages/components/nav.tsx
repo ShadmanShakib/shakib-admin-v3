@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -24,6 +25,7 @@ interface NavProps {
 
 export function Nav({ links, isCollapsed }: NavProps) {
   const pathname = usePathname();
+  const t = useTranslations("Messages");
   return (
     <div
       data-collapsed={isCollapsed}
@@ -47,7 +49,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                   )}
                 >
                   <link.icon className="h-4 w-4" />
-                  <span className="sr-only">{link.title}</span>
+                  <span className="sr-only">{t(link.title)}</span>
                 </Link>
               </TooltipTrigger>
               <TooltipContent side="right" className="flex items-center gap-4">
@@ -73,12 +75,12 @@ export function Nav({ links, isCollapsed }: NavProps) {
                 "justify-start"
               )}
             >
-              <link.icon className="mr-2 h-4 w-4" />
-              {link.title}
+              <link.icon className="mr-2 h-4 w-4 rtl:ml-2" />
+              {t(link.title)}
               {link.label && (
                 <span
                   className={cn(
-                    "ml-auto",
+                    "ml-auto rtl:mr-auto",
                     link.href === pathname && "text-background dark:text-white"
                   )}
                 >
