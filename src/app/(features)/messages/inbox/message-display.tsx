@@ -36,6 +36,7 @@ import { Messages } from "@prisma/client";
 import { Prisma } from "@prisma/client";
 import ReplyBox from "./reply-box";
 import { map } from "underscore";
+import { ar, enUS } from "date-fns/locale";
 
 interface MessageDisplayProps {
   message: Prisma.MessagesGetPayload<{
@@ -43,11 +44,14 @@ interface MessageDisplayProps {
       replies: true;
     };
   }> | null;
+  locale?: string;
 }
 
-export function MessageDisplay({ message }: MessageDisplayProps) {
+export function MessageDisplay({ message, locale }: MessageDisplayProps) {
   const today = new Date();
   const t = useTranslations();
+
+  const localeTime = locale === "en" ? enUS : ar;
 
   return (
     <TooltipProvider>
@@ -131,19 +135,21 @@ export function MessageDisplay({ message }: MessageDisplayProps) {
         <Separator />
         {message ? (
           <div className="flex flex-1 flex-col">
-            <div className="flex items-start p-4">
+            <div className="flex items-start justify-between  p-4 ">
               <div className="flex items-start gap-4 text-sm">
                 <div className="grid gap-1">
                   <div className="font-semibold">{message?.created_by}</div>
-                  <div className="line-clamp-1 text-xs">{message?.title}</div>
+                  <div className="line-clamp-1 text-xs ">{message?.title}</div>
                   <div className="line-clamp-1 text-xs">
                     <span className="font-medium">Reply-To:</span> {message?.to}
                   </div>
                 </div>
               </div>
               {message.created_at && (
-                <div className="ml-auto text-xs text-muted-foreground">
-                  {format(new Date(message.created_at), "PPpp")}
+                <div className="ml-auto rtl:mr-auto  text-xs text-muted-foreground ">
+                  {format(new Date(message.created_at), "PPpp", {
+                    locale: localeTime,
+                  })}
                 </div>
               )}
             </div>
@@ -151,6 +157,11 @@ export function MessageDisplay({ message }: MessageDisplayProps) {
             <div className="flex-1 whitespace-pre-wrap p-4 text-sm">
               <div className="">
                 <p> {message.message}</p>
+                <h1 className="text-xs">
+                  {formatDistanceToNow(new Date(message.created_at), {
+                    locale: localeTime,
+                  })}
+                </h1>
               </div>
               <Separator className="my-4" />
 
@@ -161,7 +172,9 @@ export function MessageDisplay({ message }: MessageDisplayProps) {
                     <div className="" key={rep.id}>
                       <p>{rep.message}</p>
                       <h1 className="text-xs">
-                        {formatDistanceToNow(new Date(rep.created_at))} ago
+                        {formatDistanceToNow(new Date(rep.created_at), {
+                          locale: localeTime,
+                        })}
                       </h1>
 
                       <Separator className="my-2" />
