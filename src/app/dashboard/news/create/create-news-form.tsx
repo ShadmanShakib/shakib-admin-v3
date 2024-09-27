@@ -48,7 +48,7 @@ export default function CreateNewsForm({}: Props) {
     }
   };
   return (
-    <div className="max-w-screen-md mx-auto">
+    <div className="max-w-screen-md mx-auto ">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

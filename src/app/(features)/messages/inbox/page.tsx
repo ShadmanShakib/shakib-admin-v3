@@ -11,7 +11,8 @@ export default async function Inbox({
 }) {
   const data = await getMessages();
   // get message with messageId
-  const message = await getMessage(searchParams.messageId);
+  const id = searchParams.messageId || data[0].id;
+  const message = await getMessage(id);
   return (
     <div className="flex w-full">
       <MessageList data={data} />
