@@ -40,7 +40,7 @@ export default function SendMessageForm({}: Props) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="max-w-screen-md mx-auto"
+        className="max-w-screen-md mx-auto p-5 bg-gray-50 min-h-[calc(100vh-64px)]"
       >
         <FormField
           control={form.control}

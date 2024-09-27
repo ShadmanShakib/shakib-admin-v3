@@ -146,6 +146,7 @@
     "message": "Message",
     "to": "To",
     "sent": "Sent",
-    "inbox": "Inbox"
+    "inbox": "Inbox",
+    "reply": "Reply"
   }
 }
