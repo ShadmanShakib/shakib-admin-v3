@@ -2,6 +2,9 @@
   "Homepage": {
     "title": "Hello world"
   },
+  "Common": {
+    "confirm_dialog": "Are you sure?"
+  },
   "Sidebar": {
     "dashbaord": "Dashboard",
     "campaigns": "Campaigns",
@@ -147,6 +150,7 @@
     "to": "To",
     "sent": "Sent",
     "inbox": "Inbox",
-    "reply": "Reply"
+    "reply": "Reply",
+    "delete_confirmation": "Successfully deleted message"
   }
 }

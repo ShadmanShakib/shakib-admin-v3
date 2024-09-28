@@ -3,31 +3,20 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import LinkItem from "./linkitem";
 import { useTranslations } from "next-intl";
 import { Bell, Home, MessageCircle, Package, Newspaper } from "lucide-react";
 import { Nav } from "@/app/(features)/messages/components/nav";
-import {
-  AlertCircle,
-  Archive,
-  ArchiveX,
-  File,
-  Inbox,
-  MessagesSquare,
-  Search,
-  Send,
-  ShoppingCart,
-  Trash2,
-  Users2,
-} from "lucide-react";
+import { Inbox, Send } from "lucide-react";
 type Props = {
   locale: string;
 };
 
 export default function Sidebar({ locale }: Props) {
   const t = useTranslations("Sidebar");
+  const pathname = usePathname();
   return (
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">

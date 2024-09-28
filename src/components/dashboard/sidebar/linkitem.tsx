@@ -26,8 +26,9 @@ export default function LinkItem({
 }: Props) {
   const pathname = usePathname();
   const isPath = pathname?.includes(href);
+  const [isOpen, setOpen] = React.useState(isPath);
   return subItems ? (
-    <Collapsible.Root>
+    <Collapsible.Root open={isOpen} onOpenChange={setOpen}>
       <Collapsible.Trigger
         className={cn(
           `flex items-center justify-between rounded-lg px-3 py-2 text-muted-foreground w-full transition-all hover:text-primary`,

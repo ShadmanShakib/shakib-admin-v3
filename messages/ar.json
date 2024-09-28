@@ -2,7 +2,9 @@
   "Homepage": {
     "title": "Arabic world"
   },
-
+  "Common": {
+    "confirm_dialog": "هل أنت متأكد؟"
+  },
   "Sidebar": {
     "dashbaord": "لوحة القيادة",
     "campaigns": "الحملات",
@@ -157,6 +159,7 @@
     "to": "المستلم",
     "sent": "مرسل",
     "inbox": "البريد الوارد",
-    "reply": "رد"
+    "reply": "رد",
+    "delete_confirmation": "تم حذف الرسالة بنجاح"
   }
 }
