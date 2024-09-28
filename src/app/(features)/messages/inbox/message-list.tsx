@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { useTranslations } from "next-intl";
 import { Messages } from "@prisma/client";
 import Link from "next/link";
+import { formatDistanceToNow } from "date-fns";
 
 interface MailListProps {
   data: Messages[];
@@ -32,6 +33,9 @@ export function MessageList({ data }: MailListProps) {
                   <p className="text-sm ">{item.title}</p>
                   <p className="text-xs text-gray-500 truncate">
                     {item.message}
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    {formatDistanceToNow(item.created_at)}
                   </p>
                 </div>
               </div>

@@ -34,9 +34,10 @@ import {
 } from "@/components/ui/tooltip";
 import { Messages } from "@prisma/client";
 import { Prisma } from "@prisma/client";
-import ReplyBox from "./reply-box";
 import { map } from "underscore";
 import { ar, enUS } from "date-fns/locale";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import ReplyBox from "./reply-box";
 
 interface MessageDisplayProps {
   message: Prisma.MessagesGetPayload<{
@@ -154,7 +155,7 @@ export function MessageDisplay({ message, locale }: MessageDisplayProps) {
               )}
             </div>
             <Separator />
-            <div className="flex-1 whitespace-pre-wrap p-4 text-sm">
+            <ScrollArea className="flex-1 whitespace-pre-wrap p-4 text-sm">
               <div className="">
                 <p> {message.message}</p>
                 <h1 className="text-xs">
@@ -182,7 +183,7 @@ export function MessageDisplay({ message, locale }: MessageDisplayProps) {
                   );
                 })}
               </div>
-            </div>
+            </ScrollArea>
             <Separator className="mt-auto" />
             <div className="p-4">
               <ReplyBox message={message} />

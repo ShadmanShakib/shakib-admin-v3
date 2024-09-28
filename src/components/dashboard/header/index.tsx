@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/card";
 import Language from "@/components/common/language";
 import UserButton from "@/components/common/user-button";
+import { ThemeToggle } from "@/components/common/theme-toggle";
 
 type Props = {
   locale: string;
@@ -55,7 +56,7 @@ export default function Header({ locale }: Props) {
               className="flex items-center gap-2 text-lg font-semibold"
             >
               <Package2 className="h-6 w-6" />
-              <span className="sr-only">Acme Inc</span>
+              <span className="sr-only">Linkaraby</span>
             </Link>
             <Link
               href="#"
@@ -127,6 +128,7 @@ export default function Header({ locale }: Props) {
         </form>
       </div>
       {/* Language switcher */}
+      <ThemeToggle />
       <Language locale={locale} />
       {/* User menu */}
       <UserButton />

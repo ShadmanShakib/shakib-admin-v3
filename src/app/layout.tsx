@@ -3,6 +3,7 @@ import { Readex_Pro } from "next/font/google";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Header from "@/components/dashboard/header";
 import Sidebar from "@/components/dashboard/sidebar";
+import { ThemeProvider } from "@/components/common/theme-provider";
 
 export const metadata = {
   title: "Linkaraby",
@@ -47,19 +48,21 @@ export default async function RootLayout({
       </head>
 
       <body dir={locale === "ar" ? "rtl" : "lrt"}>
-        <NextIntlClientProvider messages={messages}>
-          <main className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-            <div className="hidden border-r bg-muted/40 md:block">
-              {/* Sidebar */}
-              <Sidebar locale={locale} />
-            </div>
-            <div className="flex flex-col">
-              <Header locale={locale} />
-              {children}
-            </div>
-          </main>
-        </NextIntlClientProvider>
-        <Toaster />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider messages={messages}>
+            <main className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+              <div className="hidden border-r bg-muted/40 md:block">
+                {/* Sidebar */}
+                <Sidebar locale={locale} />
+              </div>
+              <div className="flex flex-col">
+                <Header locale={locale} />
+                {children}
+              </div>
+            </main>
+          </NextIntlClientProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
