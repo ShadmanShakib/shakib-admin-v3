@@ -6,12 +6,10 @@ import { useTranslations } from "next-intl";
 import {
   Archive,
   ArchiveX,
-  Clock,
   Forward,
   MoreVertical,
   Reply,
   ReplyAll,
-  Trash2,
 } from "lucide-react";
 
 import {
@@ -25,19 +23,20 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { Separator } from "@/components/ui/separator";
-
 import { TooltipProvider } from "@/components/ui/tooltip";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Messages } from "@prisma/client";
 import { Prisma } from "@prisma/client";
 import { map } from "underscore";
 import { ar, enUS } from "date-fns/locale";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ReplyBox from "./reply-box";
+import ConfirmDialog from "@/components/common/confirm-dialog";
+import deleteMessage from "../actions/delete-message";
+import { toast } from "sonner";
 
 interface MessageDisplayProps {
   message: Prisma.MessagesGetPayload<{
@@ -51,6 +50,12 @@ interface MessageDisplayProps {
 export function MessageDisplay({ message, locale }: MessageDisplayProps) {
   const today = new Date();
   const t = useTranslations();
+  const handleDelete = async () => {
+    if (message) {
+      const res = await deleteMessage(message.id);
+      if (res) toast.success(t("Messages.delete_confirmation"));
+    }
+  };
 
   const localeTime = locale === "en" ? enUS : ar;
 
@@ -77,15 +82,9 @@ export function MessageDisplay({ message, locale }: MessageDisplayProps) {
               </TooltipTrigger>
               <TooltipContent>Move to junk</TooltipContent>
             </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" disabled={!message}>
-                  <Trash2 className="h-4 w-4" />
-                  <span className="sr-only">Move to trash</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>Move to trash</TooltipContent>
-            </Tooltip>
+
+            <ConfirmDialog disabled={!message} onDelete={handleDelete} />
+
             <Separator orientation="vertical" className="mx-1 h-6" />
           </div>
           <div className="ml-auto flex items-center gap-2">

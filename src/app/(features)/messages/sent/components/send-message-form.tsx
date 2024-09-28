@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import sendMessage from "@/app/(features)/messages/actions/send-message";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
   FormControl,
@@ -40,7 +42,7 @@ export default function SendMessageForm({}: Props) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="max-w-screen-md mx-auto p-5 bg-gray-50 min-h-[calc(100vh-64px)]"
+        className="max-w-screen-md mx-auto p-5 space-y-5 min-h-[calc(100vh-64px)]"
       >
         <FormField
           control={form.control}
@@ -49,10 +51,7 @@ export default function SendMessageForm({}: Props) {
             <FormItem>
               <FormLabel>{t("Messages.title")}</FormLabel>
               <FormControl>
-                <input
-                  {...field}
-                  className="w-full rounded-md border border-gray-300 p-2"
-                />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -65,7 +64,7 @@ export default function SendMessageForm({}: Props) {
             <FormItem>
               <FormLabel>{t("Messages.message")}</FormLabel>
               <FormControl>
-                <textarea
+                <Textarea
                   {...field}
                   className="w-full rounded-md border border-gray-300 p-2"
                   rows={4}

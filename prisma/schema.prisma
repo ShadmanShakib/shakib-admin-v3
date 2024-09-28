@@ -44,7 +44,7 @@ model Messages {
   message                      String
   seen                         Boolean @default(false)
   to                           String  
-  replies                      Replies []
+  replies                      Replies []  
   created_by                   String
   created_at                   DateTime @default(now())
 
@@ -52,7 +52,7 @@ model Messages {
 
 model Replies {
       id                      String   @id @default(auto()) @map("_id") @db.ObjectId
-      messages                Messages  @relation(fields: [messageId], references: [id])
+      messages                Messages  @relation(fields: [messageId], references: [id] , onDelete: Cascade)
       messageId               String @db.ObjectId
       message                 String
       seen                    Boolean  @default(false)
