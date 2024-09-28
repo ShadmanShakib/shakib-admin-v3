@@ -5,13 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
+import { format } from "date-fns";
+import { ar, enUS } from "date-fns/locale";
 
 type Props = {
   data: News;
+  isArabic: boolean;
 };
 
-export default function NewsCard({ data }: Props) {
+export default function NewsCard({ data, isArabic }: Props) {
   const t = useTranslations();
+  const locale = isArabic ? ar : enUS;
   return (
     <Link href={`/dashboard/news/${data.id}`}>
       <Card className="hover:bg-gray-50 hover:shadow-xl">
@@ -34,10 +38,8 @@ export default function NewsCard({ data }: Props) {
               </Badge>
             </div>
             <div className=" mt-2 bottom-2 right-2 text-sm text-gray-500">
-              {data.created_at.toLocaleDateString("id-ID", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
+              {format(data.created_at, "PPpp", {
+                locale,
               })}
             </div>
           </div>
