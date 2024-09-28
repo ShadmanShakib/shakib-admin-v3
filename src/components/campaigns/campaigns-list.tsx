@@ -5,16 +5,18 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { PencilIcon, SearchIcon } from "lucide-react";
-import { useTheme } from "next-themes";
 import { campaigns } from "@prisma/client";
+import Link from "next/link";
 
 interface Props {
   page?: number;
@@ -26,9 +28,9 @@ export default function CampaignList({ page, campaignsData, locale }: Props) {
   const [campaigns, setCampaigns] = useState(campaignsData);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isRTL, setIsRTL] = useState(false);
+  const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState("");
-  const { theme, setTheme } = useTheme();
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -111,9 +113,7 @@ export default function CampaignList({ page, campaignsData, locale }: Props) {
                   </TableHead>
                   <TableHead className="dark:text-gray-300">Status</TableHead>
                   <TableHead
-                    className={`${
-                      isRTL ? "text-left" : "text-right"
-                    } dark:text-gray-300`}
+                    className={`${"rtl:text-left text-right"} dark:text-gray-300`}
                   >
                     Action
                   </TableHead>
@@ -134,7 +134,12 @@ export default function CampaignList({ page, campaignsData, locale }: Props) {
                         />
                       </TableCell>
                       <TableCell className="font-medium dark:text-white">
-                        {campaign.name}
+                        <Link
+                          href={`/dashboard/campaigns/${campaign.id}`}
+                          key={campaign.id}
+                        >
+                          {campaign.name}
+                        </Link>
                       </TableCell>
                       <TableCell className="dark:text-gray-300">
                         {campaign.en_name}
@@ -153,14 +158,14 @@ export default function CampaignList({ page, campaignsData, locale }: Props) {
                           {campaign.status === "A" ? "Active" : "Suspended"}
                         </Badge>
                       </TableCell>
-                      <TableCell className={isRTL ? "text-left" : "text-right"}>
+                      <TableCell className={"rtl:text-left text-right"}>
                         <Button
                           variant="outline"
                           size="sm"
                           className="dark:text-white dark:border-gray-600"
                         >
                           <PencilIcon
-                            className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"}`}
+                            className={`w-4 h-4 ${"rtl:ml-2 mr-2"}`}
                           />
                           Edit
                         </Button>
@@ -168,6 +173,16 @@ export default function CampaignList({ page, campaignsData, locale }: Props) {
                     </TableRow>
                   ))}
               </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TableCell colSpan={5}>
+                    <div className="flex gap-5 justify-end">
+                      <Button>{t("Buttons.next")}</Button>
+                      <Button>{t("Buttons.prev")}</Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              </TableFooter>
             </Table>
           </div>
         </div>
