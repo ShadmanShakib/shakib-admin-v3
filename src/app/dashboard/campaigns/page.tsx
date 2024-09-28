@@ -12,7 +12,7 @@ export default async function CampaignsPage({
   const locale = await getLocale();
   return (
     <div className="p-4">
-      <CampaignsList page={page} locale={locale} campaigns={campaigns} />
+      <CampaignsList page={page} locale={locale} campaignsData={campaigns} />
     </div>
   );
 }
