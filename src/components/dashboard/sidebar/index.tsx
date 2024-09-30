@@ -72,31 +72,6 @@ export default function Sidebar({ locale }: Props) {
                   icon: Inbox,
                   href: "/messages/inbox",
                 },
-                // {
-                //   title: "drafts",
-                //   label: "9",
-                //   icon: File,
-                //   href: "#",
-                // },
-
-                // {
-                //   title: "Junk",
-                //   label: "23",
-                //   icon: ArchiveX,
-                //   variant: "ghost",
-                // },
-                // {
-                //   title: "Trash",
-                //   label: "",
-                //   icon: Trash2,
-                //   variant: "ghost",
-                // },
-                // {
-                //   title: "Archive",
-                //   label: "",
-                //   icon: Archive,
-                //   variant: "ghost",
-                // },
               ]}
             />
           </LinkItem>
