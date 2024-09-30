@@ -205,7 +205,7 @@ export default function CampaignList({
                         className="dark:text-white dark:border-gray-600"
                       >
                         <PencilIcon className={`w-4 h-4 ${"rtl:ml-2 mr-2"}`} />
-                        Edit
+                        {t("Buttons.edit")}
                       </Button>
                     </TableCell>
                   </TableRow>

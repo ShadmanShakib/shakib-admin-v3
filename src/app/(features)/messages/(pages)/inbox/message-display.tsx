@@ -35,7 +35,7 @@ import { ar, enUS } from "date-fns/locale";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ReplyBox from "./reply-box";
 import ConfirmDialog from "@/components/common/confirm-dialog";
-import deleteMessage from "../actions/delete-message";
+import deleteMessage from "../../actions/delete-message";
 import { toast } from "sonner";
 
 interface MessageDisplayProps {

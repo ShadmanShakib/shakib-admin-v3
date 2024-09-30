@@ -145,6 +145,7 @@
   },
   "Messages": {
     "messages": "Messages",
+    "new_message": "New Message",
     "title": "Title",
     "message": "Message",
     "to": "To",
