@@ -20,6 +20,7 @@ export default async function sendMessage(payload: TSendMessageInput) {
       message: payload.message,
       to: payload.to,
       created_by: user?.email as string,
+      avatar: user?.picture as string,
     },
   });
   return message;

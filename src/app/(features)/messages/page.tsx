@@ -4,11 +4,13 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import Messages from "./components/messages";
+import { ChatLayout } from "./components/chat-layout";
+import { ChatMessageList } from "@/components/ui/chat/chat-message-list";
+import { ChatList } from "./components/chat-list";
 export default function MessagesPage() {
   return (
     <div className="">
-      <Messages isCollapsed={false} />
+      <ChatLayout defaultLayout={[320, 480]} navCollapsedSize={8} />
     </div>
   );
 }

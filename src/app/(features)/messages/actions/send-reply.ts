@@ -14,6 +14,7 @@ export default async function sendReply({ messageId, message }: TReplyInput) {
       messageId,
       message,
       created_by: user?.email as string,
+      avatar: user?.picture as string,
     },
   });
   revalidatePath(`/messages/inbox?messageId=${messageId}`);

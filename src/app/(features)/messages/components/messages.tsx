@@ -1,32 +1,34 @@
-"use client";
+import { Message, UserData } from "../data";
+import ChatTopbar from "./chat-topbar";
+import { ChatList } from "./chat-list";
+import React, { useEffect, useState } from "react";
+import useChatStore from "../hooks/use-messages";
 
-import * as React from "react";
-import { Nav } from "./nav";
-
-import {
-  AlertCircle,
-  Archive,
-  ArchiveX,
-  File,
-  Inbox,
-  MessagesSquare,
-  Search,
-  Send,
-  ShoppingCart,
-  Trash2,
-  Users2,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip";
-
-interface MessagesProps {
-  isCollapsed: boolean;
+interface ChatProps {
+  messages?: Message[];
+  selectedUser: UserData;
+  isMobile: boolean;
 }
 
-export default function Messages({ isCollapsed = true }: MessagesProps) {
+export function Chat({ messages, selectedUser, isMobile }: ChatProps) {
+  const messagesState = useChatStore((state) => state.messages);
+
+  const sendMessage = (newMessage: Message) => {
+    useChatStore.setState((state) => ({
+      messages: [...state.messages, newMessage],
+    }));
+  };
+
   return (
-    <TooltipProvider delayDuration={0}>
-      <div className=""></div>
-    </TooltipProvider>
+    <div className="flex flex-col justify-between w-full h-full">
+      <ChatTopbar selectedUser={selectedUser} />
+
+      <ChatList
+        messages={messagesState}
+        selectedUser={selectedUser}
+        sendMessage={sendMessage}
+        isMobile={isMobile}
+      />
+    </div>
   );
 }
