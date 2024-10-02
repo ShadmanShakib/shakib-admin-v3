@@ -18,7 +18,7 @@ export default function NewsCard({ data, isArabic }: Props) {
   const locale = isArabic ? ar : enUS;
   return (
     <Link href={`/dashboard/news/${data.id}`}>
-      <Card className="hover:bg-gray-50 hover:shadow-xl">
+      <Card className="hover:bg-gray-50 dark:hover:bg-gray-900 min-h-[220px] hover:shadow-xl">
         <CardHeader className="relative">
           <CardTitle>{data.title}</CardTitle>
         </CardHeader>

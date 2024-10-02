@@ -9,20 +9,12 @@ import {
   Users,
   Package,
   LineChart,
-  CircleUser,
   Search,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import { Input } from "@/components/ui/input";
 import {
   Card,
