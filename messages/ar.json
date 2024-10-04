@@ -51,7 +51,9 @@
     "search_campaigns": "حملات البحث",
     "commission": "عمولة",
     "code": "شفرة",
-    "value": "قيمة"
+    "value": "قيمة",
+    "homepage": "الصفحة الرئيسية",
+    "advertisement": "إعلان"
   },
   "Product_News": {
     "add_hot_product": "إضافة منتج رائج",

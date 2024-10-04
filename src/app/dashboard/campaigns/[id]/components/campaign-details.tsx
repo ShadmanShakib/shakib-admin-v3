@@ -41,7 +41,7 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("short_description")}
           </h1>
-          <h1>
+          <h1 className="py-2">
             {isEnglish
               ? campaign.en_short_description
               : campaign.short_description}
@@ -51,20 +51,28 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("website")}
           </h1>
-          <p>{campaign.url}</p>
+          <div className="py-2">
+            <a
+              href={`https://${campaign.url}`}
+              rel="noreferrer"
+              className="py-2 cursor-pointer"
+            >
+              {campaign.url}
+            </a>
+          </div>
         </div>
         {/* Comission */}
         <div className="">
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("commission")}
           </h1>
-          <h1>{campaign.commissionsdetails}</h1>
+          <h1 className="py-2">{campaign.commissionsdetails}</h1>
         </div>
         <div>
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("status")}
           </h1>
-          <div className="px-4 py-2">
+          <div className=" py-2">
             <Badge
               variant={campaign.status === "A" ? "default" : "destructive"}
               className={cn("h-8 ", {
@@ -77,17 +85,6 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           </div>
         </div>
 
-        {/* Warnings */}
-        <div className="">
-          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
-            {t("warning")}
-          </h1>
-          <ul className="py-2">
-            {campaign.warnings.map((warn, idx) => (
-              <li key={idx}>{isEnglish ? warn.en : warn.ar}</li>
-            ))}
-          </ul>
-        </div>
         {/* countries serverd */}
         <div className="">
           <h2 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
@@ -137,15 +134,54 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           </h1>
           <p className="py-2">{campaign.weight}</p>
         </div>
+        {/* advertisement url */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("advertisement")}
+          </h1>
+          <div className="p-2">
+            <a
+              className="hover:text-blue-500"
+              href={campaign.advertisement_url as string}
+              rel="noreferrer"
+            >
+              {campaign.advertisement_url}
+            </a>
+          </div>
+        </div>
+        {/* paltform */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("platform")}
+          </h1>
+          <p className="py-2 capitalize">{campaign.platform}</p>
+        </div>
+        {/* homepage active */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("homepage")}
+          </h1>
+          <p className="py-2">{campaign.homepage_active}</p>
+        </div>
         {/* public notes */}
         <div className="">
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("public_notes")}
           </h1>
-          <p>{isEnglish ? campaign.en_public_notes : campaign.public_notes}</p>
+          <p className="py-2">
+            {isEnglish ? campaign.en_public_notes : campaign.public_notes}
+          </p>
         </div>
+        {/* Warnings */}
         <div className="">
-          <pre>{JSON.stringify(campaign, null, 2)}</pre>
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("warning")}
+          </h1>
+          <ul className="py-2">
+            {campaign.warnings.map((warn, idx) => (
+              <li key={idx}>{isEnglish ? warn.en : warn.ar}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

@@ -48,7 +48,9 @@
     "search_campaigns": "Search Campaigns",
     "commission": "Commission",
     "code": "Code",
-    "value": "Value"
+    "value": "Value",
+    "homepage": "Homepage",
+    "advertisement": "Advertisement"
   },
   "Product_News": {
     "add_hot_product": "Add Hot Product",
