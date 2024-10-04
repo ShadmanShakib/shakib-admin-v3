@@ -1,6 +1,7 @@
 "use client";
 import React, { use } from "react";
 import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormField,
@@ -24,9 +25,11 @@ export default function EditCampaignForm({ campaign, locale }: Props) {
       name: campaign?.name || "",
       en_name: campaign?.name || "",
       short_description: campaign?.short_description || "",
-      en_short_description: "",
-      url: "",
-      logourl: "",
+      en_short_description: campaign?.short_description || "",
+      url: campaign?.url || "",
+      logourl: campaign?.logourl || "",
+      commissionsdetails: campaign?.commissionsdetails,
+      status: campaign?.status,
     },
   });
   return (
@@ -91,7 +94,7 @@ export default function EditCampaignForm({ campaign, locale }: Props) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel htmlFor="name">
-                  {t("Campaigns.short_description")}
+                  {t("Campaigns.en_short_description")}
                 </FormLabel>
                 <FormControl>
                   <Input {...field} id="en_short_description" />
@@ -99,6 +102,45 @@ export default function EditCampaignForm({ campaign, locale }: Props) {
               </FormItem>
             )}
           />
+          <FormField
+            name="url"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="url">{t("Campaigns.website")}</FormLabel>
+                <FormControl>
+                  <Input {...field} id="en_short_description" />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="commissionsdetails"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="url">{t("Campaigns.commission")}</FormLabel>
+                <FormControl>
+                  <Input {...field} id="commissionsdetails" />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="status"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="url">{t("Campaigns.status")}</FormLabel>
+                <FormControl>
+                  <Input {...field} id="status" />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <div className="mt-5">
+            <Button>{t("Buttons.update")}</Button>
+          </div>
         </form>
       </Form>
     </div>
