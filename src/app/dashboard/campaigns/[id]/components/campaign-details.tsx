@@ -103,7 +103,7 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           </h1>
           <div className="py-2 flex gap-4">
             {campaign.coupons.map((coupon, idx) => (
-              <Card key={idx}>
+              <Card className="" key={idx}>
                 <CardHeader>
                   <CardTitle>
                     <div className="flex gap-2">

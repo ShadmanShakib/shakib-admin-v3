@@ -26,7 +26,9 @@
   },
   "Campaigns": {
     "name": "Name",
+    "en_name": "English name",
     "short_description": "Short Description",
+    "en_short_description": "English Short Description",
     "campaign_details": "Campaign Details",
     "coupon": "Coupon",
     "weight": "Weight",
