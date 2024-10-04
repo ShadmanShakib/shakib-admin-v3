@@ -4,6 +4,10 @@ import { campaigns } from "@prisma/client";
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { cn } from "@/lib/utils";
 
 type Props = {
   campaign: campaigns;
@@ -14,28 +18,134 @@ export default function CampaignDetails({ campaign, locale }: Props) {
   const t = useTranslations("Campaigns");
   const isEnglish = locale === "en";
   return (
-    <div className="p-3 max-w-screen-lg mx-auto">
-      <div className="">
+    <div className="px-3 py-10 max-w-screen-lg mx-auto">
+      <div className="mb-3">
         <Image
           src={campaign?.logourl || ""}
           alt=""
           height={500}
           width={500}
-          className="h-10 w-20"
+          className="h-40 rounded-full w-auto"
         />
       </div>
       <div className="">
         <div className="">
-          <h1 className="p-2 bg-gray-200 rounded-md">{t("name")}</h1>
-          <h1>{isEnglish ? campaign.en_name : campaign.name}</h1>
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("name")}
+          </h1>
+          <h1 className="p-3">
+            {isEnglish ? campaign.en_name : campaign.name}
+          </h1>
         </div>
         <div className="">
-          <h1>{t("short_description")}</h1>
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("short_description")}
+          </h1>
           <h1>
             {isEnglish
               ? campaign.en_short_description
               : campaign.short_description}
           </h1>
+        </div>
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("website")}
+          </h1>
+          <p>{campaign.url}</p>
+        </div>
+        {/* Comission */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("commission")}
+          </h1>
+          <h1>{campaign.commissionsdetails}</h1>
+        </div>
+        <div>
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("status")}
+          </h1>
+          <div className="px-4 py-2">
+            <Badge
+              variant={campaign.status === "A" ? "default" : "destructive"}
+              className={cn("h-8 ", {
+                "bg-green-500 text-white hover:bg-green-600 dark:bg-green-700 dark:hover:bg-green-800":
+                  campaign.status === "A",
+              })}
+            >
+              {campaign.status === "A" ? "Active" : "Suspended"}
+            </Badge>
+          </div>
+        </div>
+
+        {/* Warnings */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("warning")}
+          </h1>
+          <ul className="py-2">
+            {campaign.warnings.map((warn, idx) => (
+              <li key={idx}>{isEnglish ? warn.en : warn.ar}</li>
+            ))}
+          </ul>
+        </div>
+        {/* countries serverd */}
+        <div className="">
+          <h2 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("countries_served")}
+          </h2>
+          <ul className="flex gap-3 uppercase py-2">
+            {campaign.countries_served.map((country, idx) => (
+              <li key={idx}>{country}</li>
+            ))}
+          </ul>
+        </div>
+        {/* Coupons */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("coupons")}
+          </h1>
+          <div className="py-2 flex gap-4">
+            {campaign.coupons.map((coupon, idx) => (
+              <Card key={idx}>
+                <CardHeader>
+                  <CardTitle>
+                    <div className="flex gap-2">
+                      <h1>{t("value")}:</h1>
+                      <p>{coupon.value}</p>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex gap-2">
+                    <h1>
+                      {t("code")}: {coupon.code}
+                    </h1>
+                  </div>
+                  <p>
+                    {t("type")} : {coupon.type}
+                  </p>
+                  <p>{isEnglish ? coupon.en_note : coupon.note}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        {/* Weight */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("weight")}
+          </h1>
+          <p className="py-2">{campaign.weight}</p>
+        </div>
+        {/* public notes */}
+        <div className="">
+          <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
+            {t("public_notes")}
+          </h1>
+          <p>{isEnglish ? campaign.en_public_notes : campaign.public_notes}</p>
+        </div>
+        <div className="">
+          <pre>{JSON.stringify(campaign, null, 2)}</pre>
         </div>
       </div>
     </div>

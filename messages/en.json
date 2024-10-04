@@ -45,7 +45,10 @@
     "public_notes": "Public Notes",
     "warning": "Warning",
     "coupons": "Coupons",
-    "search_campaigns": "Search Campaigns"
+    "search_campaigns": "Search Campaigns",
+    "commission": "Commission",
+    "code": "Code",
+    "value": "Value"
   },
   "Product_News": {
     "add_hot_product": "Add Hot Product",

@@ -48,7 +48,10 @@
     "homepage_active": "الصفحة الرئيسية نشطة",
     "public_notes_english": "ملاحظات اللغة الإنجليزية العامة",
     "commission_details": "تفاصيل العمولة",
-    "search_campaigns": "حملات البحث"
+    "search_campaigns": "حملات البحث",
+    "commission": "عمولة",
+    "code": "شفرة",
+    "value": "قيمة"
   },
   "Product_News": {
     "add_hot_product": "إضافة منتج رائج",
