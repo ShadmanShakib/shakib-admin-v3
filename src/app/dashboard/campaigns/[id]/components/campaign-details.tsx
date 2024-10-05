@@ -1,11 +1,14 @@
 "use client";
 
 import { campaigns } from "@prisma/client";
-import React from "react";
+import React, { Key } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import ReactCountryFlag from "react-country-flag";
+import countries from "i18n-iso-countries";
+import { Globe } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -14,9 +17,14 @@ type Props = {
   locale: string;
 };
 
+// Support arabic & english languages.
+
 export default function CampaignDetails({ campaign, locale }: Props) {
   const t = useTranslations("Campaigns");
   const isEnglish = locale === "en";
+  countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
+  countries.registerLocale(require("i18n-iso-countries/langs/ar.json"));
+
   return (
     <div className="px-3 py-10 max-w-screen-lg mx-auto">
       <div className="mb-3">
@@ -90,10 +98,72 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           <h2 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("countries_served")}
           </h2>
-          <ul className="flex gap-3 uppercase py-2">
-            {campaign.countries_served.map((country, idx) => (
-              <li key={idx}>{country}</li>
-            ))}
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-2 ">
+            {campaign?.countries_served.map(
+              (countryCode: any, index: Key | null | undefined) => (
+                <>
+                  {isEnglish ? (
+                    <li
+                      key={typeof index === "number" ? index + 10 : index}
+                      className="rtl:hidden"
+                    >
+                      {countryCode === "all" ? (
+                        <div className="flex items-center justify-center gap-[5%] rounded-md border-[1px] border-solid border-gray-400 p-[3%] py-3">
+                          All Countries <Globe />
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center gap-[5%] rounded-md border-[1px] border-solid border-gray-400 p-[3%] py-3">
+                          <span className="text-sm md:text-base">
+                            {countries.getName(countryCode, "en", {
+                              select: "official",
+                            })}
+                          </span>{" "}
+                          <ReactCountryFlag
+                            countryCode={countryCode}
+                            svg
+                            title={countryCode}
+                            style={{
+                              width: "1.8em",
+                              height: "1.8em",
+                              borderRadius: "6px",
+                            }}
+                          />
+                        </div>
+                      )}
+                    </li>
+                  ) : (
+                    <li key={index} className="ltr:hidden">
+                      {countryCode === "all" ? (
+                        <div className="flex items-center justify-center gap-[5%] rounded-md border-[1px] border-solid border-gray-400 p-[3%] py-3">
+                          جميع الدول <Globe />
+                        </div>
+                      ) : (
+                        <div
+                          key={index}
+                          className="flex items-center justify-center gap-[5%] rounded-md border-[1px] border-solid border-gray-400 p-[3%] py-3"
+                        >
+                          <ReactCountryFlag
+                            countryCode={countryCode}
+                            svg
+                            title={countryCode}
+                            style={{
+                              width: "1.8em",
+                              height: "1.8em",
+                              borderRadius: "6px",
+                            }}
+                          />{" "}
+                          <span>
+                            {countries.getName(countryCode, "ar", {
+                              select: "official",
+                            })}
+                          </span>{" "}
+                        </div>
+                      )}
+                    </li>
+                  )}
+                </>
+              )
+            )}
           </ul>
         </div>
         {/* Coupons */}
@@ -177,9 +247,14 @@ export default function CampaignDetails({ campaign, locale }: Props) {
           <h1 className="p-2 bg-gray-200 dark:bg-gray-800 rounded-md">
             {t("warning")}
           </h1>
-          <ul className="py-2">
+          <ul className="py-2 space-y-2">
             {campaign.warnings.map((warn, idx) => (
-              <li key={idx}>{isEnglish ? warn.en : warn.ar}</li>
+              <li
+                className="px-5 py-4 text-red-400 border rounded-md dark:border-gray-300"
+                key={idx}
+              >
+                {isEnglish ? warn.en : warn.ar}
+              </li>
             ))}
           </ul>
         </div>
