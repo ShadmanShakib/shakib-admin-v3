@@ -26,7 +26,9 @@
   },
   "Campaigns": {
     "name": "Name",
+    "en_name": "English name",
     "short_description": "Short Description",
+    "en_short_description": "English Short Description",
     "campaign_details": "Campaign Details",
     "coupon": "Coupon",
     "weight": "Weight",
@@ -45,7 +47,12 @@
     "public_notes": "Public Notes",
     "warning": "Warning",
     "coupons": "Coupons",
-    "search_campaigns": "Search Campaigns"
+    "search_campaigns": "Search Campaigns",
+    "commission": "Commission",
+    "code": "Code",
+    "value": "Value",
+    "homepage": "Homepage",
+    "advertisement": "Advertisement"
   },
   "Product_News": {
     "add_hot_product": "Add Hot Product",
@@ -145,6 +152,7 @@
   },
   "Messages": {
     "messages": "Messages",
+    "new_message": "New Message",
     "title": "Title",
     "message": "Message",
     "to": "To",

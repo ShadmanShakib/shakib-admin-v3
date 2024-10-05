@@ -46,6 +46,8 @@ model Messages {
   to                           String  
   replies                      Replies []  
   created_by                   String
+  role                         String?
+  avatar                       String?
   created_at                   DateTime @default(now())
 
 }
@@ -56,6 +58,8 @@ model Replies {
       messageId               String @db.ObjectId
       message                 String
       seen                    Boolean  @default(false)
+      role                    String?
+      avatar                  String?
       created_by              String
       created_at              DateTime @default(now())
       updated_at              DateTime @updatedAt

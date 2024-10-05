@@ -1,26 +1,20 @@
-"use client";
-import { ComponentProps } from "react";
-import { FormatDistanceFn } from "date-fns";
-import { useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { useTranslations } from "next-intl";
+import React from "react";
 import { Messages } from "@prisma/client";
-import Link from "next/link";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
+import Link from "next/link";
 
-interface MailListProps {
-  data: Messages[];
-}
+type Props = {
+  messages: Messages[];
+};
 
-export function MessageList({ data }: MailListProps) {
+export default function SendMessageList({ messages }: Props) {
   return (
     <ScrollArea className="h-full w-1/3 py-5 px-3 border-r ">
       <div className="flex flex-col gap-2  pt-0">
-        {data.map((item, idx) => (
-          <Link href={`/messages/inbox?messageId=${item.id}`} key={idx}>
+        {messages.map((item, idx) => (
+          <Link href={`/messages/sent?messageId=${item.id}`} key={idx}>
             <div
               key={idx}
               className={cn(
@@ -46,18 +40,4 @@ export function MessageList({ data }: MailListProps) {
       </div>
     </ScrollArea>
   );
-}
-
-function getBadgeVariantFromLabel(
-  label: string
-): ComponentProps<typeof Badge>["variant"] {
-  if (["work"].includes(label.toLowerCase())) {
-    return "default";
-  }
-
-  if (["personal"].includes(label.toLowerCase())) {
-    return "outline";
-  }
-
-  return "secondary";
 }

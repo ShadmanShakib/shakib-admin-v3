@@ -7,9 +7,18 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import LinkItem from "./linkitem";
 import { useTranslations } from "next-intl";
-import { Bell, Home, MessageCircle, Package, Newspaper } from "lucide-react";
+import {
+  Bell,
+  Home,
+  MessageCircle,
+  Package,
+  Newspaper,
+  Send,
+  Inbox,
+  MessageCircleDashed,
+} from "lucide-react";
 import { Nav } from "@/app/(features)/messages/components/nav";
-import { Inbox, Send } from "lucide-react";
+
 type Props = {
   locale: string;
 };
@@ -60,6 +69,12 @@ export default function Sidebar({ locale }: Props) {
             <Nav
               isCollapsed={false}
               links={[
+                {
+                  title: "new_message",
+                  label: "",
+                  icon: MessageCircleDashed,
+                  href: "/messages/new",
+                },
                 {
                   title: "sent",
                   label: "",

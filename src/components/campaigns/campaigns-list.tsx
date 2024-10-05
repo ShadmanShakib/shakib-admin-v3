@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import {
   Table,
   TableBody,
@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import searchCampaigns from "@features/camapaigns/services/searchCampaigns";
+import { useRouter } from "next/navigation";
 
 interface Props {
   page: number;
@@ -33,6 +34,7 @@ export default function CampaignList({
   locale,
 }: Props) {
   const t = useTranslations();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const { data, isLoading, error } = useQuery({
     queryKey: ["campaigns", searchQuery],
@@ -150,7 +152,7 @@ export default function CampaignList({
                           <PencilIcon
                             className={`w-4 h-4 ${"rtl:ml-2 mr-2"}`}
                           />
-                          Edit
+                          {t("Buttons.edit")}
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -203,9 +205,15 @@ export default function CampaignList({
                         variant="outline"
                         size="sm"
                         className="dark:text-white dark:border-gray-600"
+                        onClick={() =>
+                          router.push(
+                            `/dashboard/campaigns/${campaign.id}/edit`
+                          )
+                        }
                       >
                         <PencilIcon className={`w-4 h-4 ${"rtl:ml-2 mr-2"}`} />
-                        Edit
+                        {t("Buttons.edit")}
+                        {/* Edit */}
                       </Button>
                     </TableCell>
                   </TableRow>
