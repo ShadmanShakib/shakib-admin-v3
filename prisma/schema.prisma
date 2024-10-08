@@ -105,6 +105,20 @@ model campaigns {
   
 }
 
+model merchants {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  firstName             String
+  lastName              String
+  email                 String
+  phone                String?
+  country              String?
+  city                 String []
+  countriesServed      String []
+  storeName            String?
+  url                  String?
+  
+}
+
 type Warning {
   en       String
   ar       String
