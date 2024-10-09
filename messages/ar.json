@@ -3,7 +3,13 @@
     "title": "Arabic world"
   },
   "Common": {
-    "confirm_dialog": "هل أنت متأكد؟"
+    "confirm_dialog": "هل أنت متأكد؟",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "country": "البلد",
+    "search": "بحث",
+    "actions": "الإجراءات"
   },
   "Sidebar": {
     "dashbaord": "لوحة القيادة",

@@ -116,6 +116,7 @@ model merchants {
   countriesServed      String []
   storeName            String?
   url                  String?
+  accountID           String?
   
 }
 

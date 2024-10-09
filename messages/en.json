@@ -3,7 +3,13 @@
     "title": "Hello world"
   },
   "Common": {
-    "confirm_dialog": "Are you sure?"
+    "confirm_dialog": "Are you sure?",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "country": "Country",
+    "search": "Search",
+    "actions": "Actions"
   },
   "Sidebar": {
     "dashbaord": "Dashboard",

@@ -1,11 +1,18 @@
 import React from "react";
 import getMerchants from "./actions/get-merchants";
+import MerchantList from "./components/merchants-list";
 
 export default async function MerchantPage() {
-  const merchants = await getMerchants();
+  const data = await getMerchants();
   return (
-    <div>
-      <pre>{JSON.stringify(merchants, null, 2)}</pre>
+    <div className="p-4">
+      <h1 className="text-xl font-semibold">Merchants</h1>
+      <div className="">
+        <MerchantList
+          merchants={data.merchants}
+          totalMerchants={data.totalMerchants}
+        />
+      </div>
     </div>
   );
 }
