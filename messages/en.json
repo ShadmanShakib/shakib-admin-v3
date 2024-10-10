@@ -9,7 +9,8 @@
     "phone": "Phone",
     "country": "Country",
     "search": "Search",
-    "actions": "Actions"
+    "actions": "Actions",
+    "approve": "Approve"
   },
   "Sidebar": {
     "dashbaord": "Dashboard",

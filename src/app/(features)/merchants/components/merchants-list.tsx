@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { merchants } from "@prisma/client";
 import { Button } from "@/components/ui/button";
+import { Pencil } from "lucide-react";
 
 type Props = {
   merchants: merchants[];
@@ -43,6 +44,12 @@ export default function MerchantList({ merchants, totalMerchants }: Props) {
               <TableCell>{merchant.email}</TableCell>
               <TableCell className="text-center">{merchant.phone}</TableCell>
               <TableCell className="text-center">{merchant.country}</TableCell>
+              <TableCell>
+                <Button className="gap-2">
+                  <Pencil size={16} />
+                  {t("Buttons.edit")}
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

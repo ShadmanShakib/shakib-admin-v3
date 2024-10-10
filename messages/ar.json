@@ -9,7 +9,8 @@
     "phone": "الهاتف",
     "country": "البلد",
     "search": "بحث",
-    "actions": "الإجراءات"
+    "actions": "الإجراءات",
+    "approve": "يوافق"
   },
   "Sidebar": {
     "dashbaord": "لوحة القيادة",
