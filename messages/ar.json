@@ -13,7 +13,7 @@
     "approve": "يوافق"
   },
   "Sidebar": {
-    "dashbaord": "لوحة القيادة",
+    "dashbaord": "لوحة الإدارة",
     "campaigns": "الحملات",
     "product_news": "أخبار المنتجات",
     "news": "أخبار",
@@ -30,15 +30,15 @@
     "prev": "سابق",
     "submit": "إرسال",
     "update": "تحديث",
-    "send": "يرسل"
+    "send": "حفظ"
   },
   "Campaigns": {
     "name": "الاسم",
     "en_name": "الاسم الانجليزي",
-    "short_description": "الوصف القصير",
-    "en_short_description": "وصف قصير باللغة الإنجليزية",
+    "short_description": "وصف مختصر",
+    "en_short_description": "وصف مختصر باللغة الإنجليزية",
     "campaign_details": "تفاصيل الحملة",
-    "coupon": "القسيمة",
+    "coupon": "كوبون",
     "weight": "الوزن",
     "type": "النوع",
     "status": "الحالة",
@@ -49,7 +49,7 @@
     "campaign_name": "اسم الحملة",
     "campaign_short_description": "الوصف القصير للحملة",
     "platform": "المنصة",
-    "advertisement_url": "رابط الإعلان",
+    "advertisement_url": "رابط مواد تسويقية",
     "website": "الموقع الإلكتروني",
     "countries_served": "الدول المخدومة",
     "public_notes": "ملاحظات عامة",
