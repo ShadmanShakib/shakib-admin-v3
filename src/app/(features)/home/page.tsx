@@ -7,7 +7,9 @@ export default function Homepage() {
     <main className="px-5">
       <h1 className="my-5 text-2xl">Homepage</h1>
       <Greeting />
-      <Revenue />
+      <div className="mt-5">
+        <Revenue />
+      </div>
     </main>
   );
 }
