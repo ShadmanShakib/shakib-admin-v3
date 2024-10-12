@@ -1,6 +1,5 @@
 import React from "react";
-import Sidebar from "@/components/dashboard/sidebar";
-import Header from "@/components/dashboard/header";
+
 import { getLocale } from "next-intl/server";
 
 type Props = {
