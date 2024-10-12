@@ -18,7 +18,8 @@
     "product_news": "أخبار المنتجات",
     "news": "أخبار",
     "messages": "رسائل",
-    "merchants": "التجار"
+    "merchants": "التجار",
+    "profile": "الملف الشخصي"
   },
   "Buttons": {
     "details": "تفاصيل",
@@ -177,5 +178,12 @@
     "inbox": "البريد الوارد",
     "reply": "رد",
     "delete_confirmation": "تم حذف الرسالة بنجاح"
+  },
+  "Home": {
+    "title": "العالم العربي",
+    "greeting": "مرحبا، {name}!"
+  },
+  "Profile": {
+    "user_profile": "الملف الشخصي"
   }
 }

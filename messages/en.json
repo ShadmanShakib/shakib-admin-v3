@@ -18,7 +18,8 @@
     "product_news": "Product News",
     "news": "News",
     "messages": "Messages",
-    "merchants": "Merchants"
+    "merchants": "Merchants",
+    "profile": "Profile"
   },
   "Buttons": {
     "details": "Details",
@@ -168,5 +169,11 @@
     "inbox": "Inbox",
     "reply": "Reply",
     "delete_confirmation": "Successfully deleted message"
+  },
+  "Home": {
+    "greeting": "Hello, {name}!"
+  },
+  "Profile": {
+    "user_profile": "User Profile"
   }
 }

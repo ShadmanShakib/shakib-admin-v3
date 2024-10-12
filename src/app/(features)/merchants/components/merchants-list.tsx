@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams, useRouter } from "next/navigation";
 import {
   Table,
   TableBody,
@@ -21,6 +22,10 @@ type Props = {
 
 export default function MerchantList({ merchants, totalMerchants }: Props) {
   const t = useTranslations();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1;
+
   return (
     <div>
       <Table>
@@ -57,8 +62,18 @@ export default function MerchantList({ merchants, totalMerchants }: Props) {
           <TableRow>
             <TableCell colSpan={3}>Total Merchants: {totalMerchants}</TableCell>
             <TableCell colSpan={2} className="space-x-4 ">
-              <Button>{t("Buttons.prev")}</Button>
-              <Button>{t("Buttons.next")}</Button>
+              {page > 1 && (
+                <Button
+                  onClick={() => router.push(`/merchants?page=${page - 1}`)}
+                >
+                  {t("Buttons.prev")}
+                </Button>
+              )}
+              <Button
+                onClick={() => router.push(`/merchants?page=${page + 1}`)}
+              >
+                {t("Buttons.next")}
+              </Button>
             </TableCell>
           </TableRow>
         </TableFooter>

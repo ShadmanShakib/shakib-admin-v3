@@ -1,6 +1,7 @@
 import React from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import Notification from "./notifications";
 import {
   Menu,
   Package2,
@@ -10,6 +11,7 @@ import {
   Package,
   LineChart,
   Search,
+  Bell,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -119,6 +121,7 @@ export default function Header({ locale }: Props) {
           </div>
         </form>
       </div>
+      <Notification />
       {/* Language switcher */}
       <ThemeToggle />
       <Language locale={locale} />
