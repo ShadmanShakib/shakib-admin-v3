@@ -17,6 +17,7 @@ import {
   Inbox,
   MessageCircleDashed,
   ShoppingBag,
+  User2Icon,
 } from "lucide-react";
 import { Nav } from "@/app/(features)/messages/components/nav";
 
@@ -90,6 +91,11 @@ export default function Sidebar({ locale }: Props) {
             href="/merchants"
             icon={<ShoppingBag className="h-4 w-4" />}
             title={t("merchants")}
+          />
+          <LinkItem
+            href="/user-profile"
+            icon={<User2Icon className="h-4 w-4" />}
+            title={t("profile")}
           />
         </nav>
       </div>

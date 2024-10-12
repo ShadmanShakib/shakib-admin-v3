@@ -9,7 +9,7 @@ export default async function UserProfilePage() {
   }
 
   return (
-    <main>
+    <main className="lg:px-10 px-5">
       <UserDetails />
     </main>
   );
