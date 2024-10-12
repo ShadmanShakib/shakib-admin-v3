@@ -181,5 +181,8 @@
   "Home": {
     "title": "العالم العربي",
     "greeting": "مرحبا، {name}!"
+  },
+  "Profile": {
+    "user_profile": "الملف الشخصي"
   }
 }

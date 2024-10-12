@@ -171,5 +171,8 @@
   },
   "Home": {
     "greeting": "Hello, {name}!"
+  },
+  "Profile": {
+    "user_profile": "User Profile"
   }
 }
