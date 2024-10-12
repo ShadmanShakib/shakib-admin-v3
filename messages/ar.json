@@ -177,5 +177,9 @@
     "inbox": "البريد الوارد",
     "reply": "رد",
     "delete_confirmation": "تم حذف الرسالة بنجاح"
+  },
+  "Home": {
+    "title": "العالم العربي",
+    "greeting": "مرحبا، {name}!"
   }
 }

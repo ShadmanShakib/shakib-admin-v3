@@ -168,5 +168,8 @@
     "inbox": "Inbox",
     "reply": "Reply",
     "delete_confirmation": "Successfully deleted message"
+  },
+  "Home": {
+    "greeting": "Hello, {name}!"
   }
 }
