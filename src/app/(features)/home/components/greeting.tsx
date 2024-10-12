@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import React from "react";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
@@ -18,7 +18,7 @@ export default function Greeting({}: Props) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div>Welcome to Linkaraby dashboard, !</div>
+        <div>Welcome to Linkaraby dashboard.</div>
       </CardContent>
     </Card>
   );
