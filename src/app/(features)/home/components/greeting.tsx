@@ -13,7 +13,7 @@ export default function Greeting({}: Props) {
   return (
     <Card className="max-w-md">
       <CardHeader>
-        <CardTitle className="capitalize">
+        <CardTitle className="capitalize text-3xl">
           {t("greeting", { name: user?.given_name })}
         </CardTitle>
       </CardHeader>
