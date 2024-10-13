@@ -3,6 +3,7 @@ import Greeting from "./components/greeting";
 import { Revenue } from "./components/revenue";
 import { Visitors } from "./components/visitors";
 import Clicks from "./components/clicks";
+import NewOrders from "./components/new-orders";
 
 export default function Homepage() {
   return (
@@ -10,6 +11,9 @@ export default function Homepage() {
       <h1 className="my-5 text-2xl">Homepage</h1>
       <div className="grid grid-cols-3 gap-3">
         <Greeting />
+        <NewOrders />
+      </div>
+      <div className="grid grid-cols-2 mt-5 gap-5">
         <Visitors />
         <Clicks />
       </div>
