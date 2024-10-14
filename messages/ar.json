@@ -185,5 +185,9 @@
   },
   "Profile": {
     "user_profile": "الملف الشخصي"
+  },
+  "Product": {
+    "add_product": "إضافة منتج",
+    "description": "وصف"
   }
 }

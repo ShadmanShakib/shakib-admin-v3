@@ -20,7 +20,7 @@ export default function Homepage() {
         <Visitors />
         <Clicks />
       </div>
-      <div className="mt-5 flex gap-5">
+      <div className="mt-5 grid grid-cols-2 gap-5">
         <Revenue />
         <TopSellingProduct />
       </div>

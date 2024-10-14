@@ -175,5 +175,9 @@
   },
   "Profile": {
     "user_profile": "User Profile"
+  },
+  "Product": {
+    "add_product": "Add Product",
+    "description": "Description"
   }
 }
