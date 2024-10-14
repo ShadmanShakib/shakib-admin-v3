@@ -10,7 +10,8 @@
     "country": "Country",
     "search": "Search",
     "actions": "Actions",
-    "approve": "Approve"
+    "approve": "Approve",
+    "category": "Category"
   },
   "Sidebar": {
     "dashbaord": "Dashboard",
