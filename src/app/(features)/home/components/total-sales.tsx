@@ -28,12 +28,12 @@ import {
 export const description = "A line chart";
 
 const chartData = [
-  { month: "January", desktop: 186 },
+  { month: "January", desktop: 146 },
   { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "March", desktop: 297 },
+  { month: "April", desktop: 733 },
+  { month: "May", desktop: 249 },
+  { month: "June", desktop: 14 },
 ];
 
 const chartConfig = {
@@ -58,16 +58,16 @@ const LineX = () => {
     </ResponsiveContainer>
   );
 };
-export default function NewOrders() {
+export default function TotalSales() {
   return (
     <Card className="w-[400px]">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">New Orders</CardTitle>
+        <CardTitle className="text-sm font-medium">Total Sales</CardTitle>
         <Package className="h-4 w-4 text-purple-500" />
       </CardHeader>
       <CardContent>
-        <div className="text-4xl font-bold">$ 51,325</div>
-        <p className="text-xs text-muted-foreground">14% since Last Month</p>
+        <div className="text-4xl font-bold">$ 29,325</div>
+        <p className="text-xs text-muted-foreground">13% since Last Month</p>
         <div className="mt-4 h-[80px] relative">
           <LineX />
         </div>

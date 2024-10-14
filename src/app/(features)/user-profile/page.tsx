@@ -1,11 +1,12 @@
 import React from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import UserDetails from "./user-details";
+import { redirect } from "next/navigation";
 export default async function UserProfilePage() {
   const { isAuthenticated } = getKindeServerSession();
 
   if (!(await isAuthenticated())) {
-    return <div>Not authenticated</div>;
+    redirect("/api/auth/login");
   }
 
   return (
