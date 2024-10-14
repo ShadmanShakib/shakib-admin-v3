@@ -5,6 +5,7 @@ import { Visitors } from "./components/visitors";
 import Clicks from "./components/clicks";
 import NewOrders from "./components/new-orders";
 import TotalSales from "./components/total-sales";
+import TopSellingProduct from "./components/top-selling-products";
 
 export default function Homepage() {
   return (
@@ -19,9 +20,11 @@ export default function Homepage() {
         <Visitors />
         <Clicks />
       </div>
-      <div className="mt-5">
+      <div className="mt-5 flex gap-5">
         <Revenue />
+        <TopSellingProduct />
       </div>
+      <div className=""></div>
     </main>
   );
 }
