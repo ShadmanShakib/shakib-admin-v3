@@ -97,6 +97,49 @@ export default function AddProductForm({}: Props) {
                     </FormItem>
                   )}
                 />
+                <FormField
+                  name="quality"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="quality">
+                        {t("Product.quality")}
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          id="quality"
+                          placeholder={t("Product.quality")}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="color"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="color">
+                        {t("Product.color")}
+                      </FormLabel>
+                      <FormControl>
+                        <Select {...field}>
+                          <SelectTrigger>
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectGroup>
+                              <SelectItem value="1">Brand New</SelectItem>
+                              <SelectItem value="2">Second Hand</SelectItem>
+                              <SelectItem value="3">Both Quality</SelectItem>
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </div>
             </form>
           </Form>
