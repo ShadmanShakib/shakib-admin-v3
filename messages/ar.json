@@ -191,6 +191,9 @@
     "add_product": "إضافة منتج",
     "description": "وصف",
     "quality": "جودة",
-    "color": "لون"
+    "color": "لون",
+    "size": "حجم",
+    "price": "السعر",
+    "date": "تاريخ"
   }
 }

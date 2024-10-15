@@ -181,6 +181,9 @@
     "add_product": "Add Product",
     "description": "Description",
     "quality": "Quality",
-    "color": "Color"
+    "color": "Color",
+    "size": "Size",
+    "price": "Price",
+    "date": "Date"
   }
 }

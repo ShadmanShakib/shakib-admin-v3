@@ -149,7 +149,7 @@ export default function AddProductForm({}: Props) {
                     />
                   </div>
                 </div>
-                {/* Right side */}
+                {/* Right side starts */}
                 <div className="">
                   <div className="">
                     <h1 className="mb-2">Product Image</h1>
@@ -169,7 +169,58 @@ export default function AddProductForm({}: Props) {
                       </div>
                     </div>
                   </div>
+                  {/* Size & date */}
+                  <div className="">
+                    <h1>Select size</h1>
+                    <div className="">
+                      <FormField
+                        name="size"
+                        control={form.control}
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="size">
+                              {t("Product.size")}
+                            </FormLabel>
+                            <FormControl>
+                              <Select {...field}>
+                                <SelectTrigger>
+                                  <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectGroup>
+                                    <SelectItem value="1">Small</SelectItem>
+                                    <SelectItem value="2">Medium</SelectItem>
+                                    <SelectItem value="3">Large</SelectItem>
+                                  </SelectGroup>
+                                </SelectContent>
+                              </Select>
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        name="date"
+                        control={form.control}
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="date">
+                              {t("Product.date")}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                id="date"
+                                type="date"
+                                placeholder={t("Product.date")}
+                              />
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                  </div>
                 </div>
+                {/* Right side ends */}
               </div>
             </form>
           </Form>
