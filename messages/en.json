@@ -179,6 +179,8 @@
   },
   "Product": {
     "add_product": "Add Product",
-    "description": "Description"
+    "description": "Description",
+    "quality": "Quality",
+    "color": "Color"
   }
 }

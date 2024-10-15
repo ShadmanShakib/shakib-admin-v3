@@ -189,6 +189,8 @@
   },
   "Product": {
     "add_product": "إضافة منتج",
-    "description": "وصف"
+    "description": "وصف",
+    "quality": "جودة",
+    "color": "لون"
   }
 }

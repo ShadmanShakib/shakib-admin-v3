@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
+import { useDropzone } from "react-dropzone";
+import { UploadCloud } from "lucide-react";
 import {
   Select,
   SelectTrigger,
@@ -27,119 +29,147 @@ type Props = {};
 
 export default function AddProductForm({}: Props) {
   const form = useForm();
+  const { getRootProps, getInputProps } = useDropzone();
   const t = useTranslations();
   return (
     <div>
       <Card>
-        <CardHeader>{t("Product.description")}</CardHeader>
-        <CardContent>
+        <CardContent className="pt-5">
           <Form {...form}>
             <form>
-              <FormField
-                name="name"
-                control={form.control}
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="name">{t("Common.name")}</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        id="name"
-                        placeholder={t("Common.name")}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-              <FormField
-                name="description"
-                control={form.control}
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="description">
-                      {t("Product.description")}
-                    </FormLabel>
-                    <FormControl>
-                      <Textarea
-                        {...field}
-                        id="description"
-                        placeholder={t("Product.description")}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
+              <div className="grid grid-cols-2 gap-5">
+                <div className="">
+                  <h1>{t("Product.description")}</h1>
+                  <FormField
+                    name="name"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor="name">{t("Common.name")}</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            id="name"
+                            placeholder={t("Common.name")}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="description"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor="description">
+                          {t("Product.description")}
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            id="description"
+                            placeholder={t("Product.description")}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
 
-              <h1>{t("Common.category")}</h1>
-              <div className="">
-                <FormField
-                  name="category"
-                  control={form.control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="category">
-                        {t("Product_News.product_category")}
-                      </FormLabel>
-                      <FormControl>
-                        <Select {...field}>
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectGroup>
-                              <SelectItem value="1">Category 1</SelectItem>
-                              <SelectItem value="2">Category 2</SelectItem>
-                              <SelectItem value="3">Category 3</SelectItem>
-                            </SelectGroup>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  name="quality"
-                  control={form.control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="quality">
-                        {t("Product.quality")}
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          id="quality"
-                          placeholder={t("Product.quality")}
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  name="color"
-                  control={form.control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="color">
-                        {t("Product.color")}
-                      </FormLabel>
-                      <FormControl>
-                        <Select {...field}>
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectGroup>
-                              <SelectItem value="1">Brand New</SelectItem>
-                              <SelectItem value="2">Second Hand</SelectItem>
-                              <SelectItem value="3">Both Quality</SelectItem>
-                            </SelectGroup>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
+                  <h1>{t("Common.category")}</h1>
+                  <div className="">
+                    <FormField
+                      name="category"
+                      control={form.control}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel htmlFor="category">
+                            {t("Product_News.product_category")}
+                          </FormLabel>
+                          <FormControl>
+                            <Select {...field}>
+                              <SelectTrigger>
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="1">Category 1</SelectItem>
+                                  <SelectItem value="2">Category 2</SelectItem>
+                                  <SelectItem value="3">Category 3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      name="color"
+                      control={form.control}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel htmlFor="color">
+                            {t("Product.color")}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              id="quality"
+                              placeholder={t("Product.color")}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      name="quality"
+                      control={form.control}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel htmlFor="quality">
+                            {t("Product.quality")}
+                          </FormLabel>
+                          <FormControl>
+                            <Select {...field}>
+                              <SelectTrigger>
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="1">Brand New</SelectItem>
+                                  <SelectItem value="2">Second Hand</SelectItem>
+                                  <SelectItem value="3">
+                                    Both Quality
+                                  </SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </div>
+                {/* Right side */}
+                <div className="">
+                  <div className="">
+                    <h1 className="mb-2">Product Image</h1>
+                    <div>
+                      <div
+                        className="border-2 border-dotted border-gray-300 rounded-lg p-6 text-center"
+                        {...getRootProps()}
+                      >
+                        <input {...getInputProps()} type="file" />
+                        <div className="flex flex-col items-center justify-center">
+                          <UploadCloud size={48} />
+                          <p>
+                            Drag & drop some files here, or click to select
+                            files
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </form>
           </Form>
