@@ -10,7 +10,8 @@
     "country": "البلد",
     "search": "بحث",
     "actions": "الإجراءات",
-    "approve": "يوافق"
+    "approve": "يوافق",
+    "category": "الفئة"
   },
   "Sidebar": {
     "dashbaord": "لوحة الإدارة",
@@ -185,5 +186,17 @@
   },
   "Profile": {
     "user_profile": "الملف الشخصي"
+  },
+  "Product": {
+    "add_product": "إضافة منتج",
+    "description": "وصف",
+    "quality": "جودة",
+    "color": "لون",
+    "size": "حجم",
+    "price": "السعر",
+    "date": "تاريخ",
+    "product_details": "تفاصيل المنتج",
+    "product_name": "اسم المنتج",
+    "product_description": "وصف المنتج"
   }
 }

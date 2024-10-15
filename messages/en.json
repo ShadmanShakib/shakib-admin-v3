@@ -10,7 +10,8 @@
     "country": "Country",
     "search": "Search",
     "actions": "Actions",
-    "approve": "Approve"
+    "approve": "Approve",
+    "category": "Category"
   },
   "Sidebar": {
     "dashbaord": "Dashboard",
@@ -175,5 +176,17 @@
   },
   "Profile": {
     "user_profile": "User Profile"
+  },
+  "Product": {
+    "add_product": "Add Product",
+    "description": "Description",
+    "quality": "Quality",
+    "color": "Color",
+    "size": "Size",
+    "price": "Price",
+    "date": "Date",
+    "product_details": "Product Details",
+    "product_name": "Product Name",
+    "product_description": "Product Description"
   }
 }
