@@ -39,7 +39,7 @@ export default function AddProductForm({}: Props) {
             <form>
               <div className="grid grid-cols-2 gap-5">
                 <div className="">
-                  <h1>{t("Product.description")}</h1>
+                  <h1 className="mb-2 text-lg">{t("Product.description")}</h1>
                   <FormField
                     name="name"
                     control={form.control}
@@ -75,7 +75,7 @@ export default function AddProductForm({}: Props) {
                     )}
                   />
 
-                  <h1>{t("Common.category")}</h1>
+                  <h1 className="text-lg mt-5 mb-2">{t("Common.category")}</h1>
                   <div className="">
                     <FormField
                       name="category"
@@ -155,7 +155,7 @@ export default function AddProductForm({}: Props) {
                     <h1 className="mb-2">Product Image</h1>
                     <div>
                       <div
-                        className="border-2 border-dotted border-gray-300 rounded-lg p-6 text-center"
+                        className="border-2 border-dotted border-gray-300 rounded-lg p-6 py-20 text-center"
                         {...getRootProps()}
                       >
                         <input {...getInputProps()} type="file" />
@@ -171,8 +171,8 @@ export default function AddProductForm({}: Props) {
                   </div>
                   {/* Size & date */}
                   <div className="">
-                    <h1>Select size</h1>
-                    <div className="">
+                    <h1 className="mt-5 mb-2 text-lg">Select size</h1>
+                    <div className="space-y-2">
                       <FormField
                         name="size"
                         control={form.control}
