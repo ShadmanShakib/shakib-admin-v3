@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import ImageCarousel from "./image-carousel";
 import ProductDescription from "./product-description";
+import OthersTab from "./others-tab";
 
 export default function ProductDetails() {
   const t = useTranslations();
@@ -13,6 +14,7 @@ export default function ProductDetails() {
         <ImageCarousel />
         <ProductDescription />
       </div>
+      <OthersTab />
     </div>
   );
 }
