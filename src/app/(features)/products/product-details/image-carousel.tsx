@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { map } from "underscore";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,12 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 
 type Props = {};
+
+const data = [
+  { id: 1, src: "/images/03.jpg" },
+  { id: 2, src: "/images/04.jpg" },
+  { id: 3, src: "/images/07.jpg" },
+];
 
 export default function ImageCarousel({}: Props) {
   return (
@@ -25,30 +32,17 @@ export default function ImageCarousel({}: Props) {
           ]}
         >
           <CarouselContent>
-            <CarouselItem>
-              <Image
-                src="/images/03.jpg"
-                alt="Product 1"
-                width={350}
-                height={350}
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src="/images/04.jpg"
-                alt="Product 1"
-                width={350}
-                height={350}
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src="/images/07.jpg"
-                alt="Product 1"
-                width={350}
-                height={350}
-              />
-            </CarouselItem>
+            {map(data, (item) => (
+              <CarouselItem key={item.id}>
+                <Image
+                  src={item.src}
+                  alt="Product Image"
+                  width={400}
+                  height={400}
+                  className="rounded-lg"
+                />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
       </CardContent>

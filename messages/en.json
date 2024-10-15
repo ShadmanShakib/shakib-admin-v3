@@ -185,6 +185,8 @@
     "size": "Size",
     "price": "Price",
     "date": "Date",
-    "product_details": "Product Details"
+    "product_details": "Product Details",
+    "product_name": "Product Name",
+    "product_description": "Product Description"
   }
 }

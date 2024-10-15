@@ -195,6 +195,8 @@
     "size": "حجم",
     "price": "السعر",
     "date": "تاريخ",
-    "product_details": "تفاصيل المنتج"
+    "product_details": "تفاصيل المنتج",
+    "product_name": "اسم المنتج",
+    "product_description": "وصف المنتج"
   }
 }
