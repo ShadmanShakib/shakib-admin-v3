@@ -53,7 +53,7 @@ export default function Cart({}: Props) {
                 <TableCell>$100.00</TableCell>
                 <TableCell>2</TableCell>
                 <TableCell>
-                  <button>Remove</button>
+                  <Button variant="destructive">Remove</Button>
                 </TableCell>
                 <TableCell>$200.00</TableCell>
               </TableRow>
@@ -69,9 +69,15 @@ export default function Cart({}: Props) {
                 <TableCell>$100.00</TableCell>
                 <TableCell>2</TableCell>
                 <TableCell>
-                  <button>Remove</button>
+                  <Button variant="destructive">Remove</Button>
                 </TableCell>
                 <TableCell>$200.00</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-right" colSpan={5}>
+                  Total price
+                </TableCell>
+                <TableCell>$400</TableCell>
               </TableRow>
             </TableBody>
           </Table>
