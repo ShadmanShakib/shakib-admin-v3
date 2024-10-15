@@ -7,6 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { LuShoppingBasket } from "react-icons/lu";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 type Props = {};
 
@@ -72,10 +73,14 @@ export default function ProductDescription({}: Props) {
             </div>
           </div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 flex gap-3">
           <Button className="w-full">
             <LuShoppingBasket className="mr-2 h-6 w-6" />
             Add to Cart
+          </Button>
+          <Button variant="outline" className="w-full">
+            <AiOutlineShoppingCart className="mr-2 h-6 w-6" />
+            Buy Now
           </Button>
         </div>
       </CardContent>
