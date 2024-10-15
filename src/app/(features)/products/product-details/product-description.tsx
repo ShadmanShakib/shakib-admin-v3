@@ -3,9 +3,10 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
-import {} from "@radix-ui/react-icons";
 import { FaFacebookF } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
+import { Button } from "@/components/ui/button";
+import { LuShoppingBasket } from "react-icons/lu";
 
 type Props = {};
 
@@ -55,7 +56,7 @@ export default function ProductDescription({}: Props) {
             <span>ABC</span>
           </div>
           <div className="">
-            <span className="font-semifold">Frabic : </span>
+            <span className="font-semibold">Frabic : </span>
             <span>Cotton</span>
           </div>
         </div>
@@ -70,6 +71,12 @@ export default function ProductDescription({}: Props) {
               <RiTwitterXLine className="dark:text-white text-black" />
             </div>
           </div>
+        </div>
+        <div className="mt-5">
+          <Button className="w-full">
+            <LuShoppingBasket className="mr-2 h-6 w-6" />
+            Add to Cart
+          </Button>
         </div>
       </CardContent>
     </Card>
