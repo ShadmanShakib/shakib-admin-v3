@@ -184,6 +184,7 @@
     "color": "Color",
     "size": "Size",
     "price": "Price",
-    "date": "Date"
+    "date": "Date",
+    "product_details": "Product Details"
   }
 }
