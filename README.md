@@ -1,7 +1,7 @@
 # Shakib Admin V3 - NextJS with full App Router support
 
 <a href="https://youtu.be/HCeadqjg8uw">
-    <img src="https://youtu.be/HCeadqjg8uw/0.jpg" width="400" height="300"/>
+    <img src="https://www.youtube.com/watch?v=HCeadqjg8uw" width="400" height="300"/>
 </a>
 
 ## Dependancies
