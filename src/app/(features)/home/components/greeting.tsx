@@ -18,7 +18,7 @@ export default function Greeting({}: Props) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div>Welcome to Linkaraby dashboard.</div>
+        <div>Welcome to Shakib Admin V3.</div>
       </CardContent>
     </Card>
   );
